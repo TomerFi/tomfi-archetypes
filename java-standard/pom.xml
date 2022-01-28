@@ -16,4 +16,14 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
+  <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.archetype</groupId>
+        <artifactId>archetype-packaging</artifactId>
+        <version>${archetype-packaging.version}</version>
+      </extension>
+    </extensions>
+  </build>
+
 </project>
