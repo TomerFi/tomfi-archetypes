@@ -1,5 +1,8 @@
-import static org.assertj.core.api.BDDAssertions.then;
+package ${package};
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.BDDMockito.then;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -8,13 +11,14 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
-final class App_Runner_Test {
+class App_Runner_Test {
   @Mock private AppInterface mockApp;
   @InjectMocks private AppRunner sut;
 
   @Test
   void checking_the_runner_if_the_app_is_running_should_invoke_the_underlying_app() {
     given(mockApp.running()).willReturn(true);
-    then(sut.isAppRunning()).isTrue();
+    assertThat(sut.isAppRunning()).isTrue();
+    then(mockApp).should().running();
   }
 }

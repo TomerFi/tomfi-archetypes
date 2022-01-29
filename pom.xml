@@ -3,7 +3,7 @@
 
   <groupId>info.tomfi.archetypes</groupId>
   <artifactId>tomfi-archetypes-parent</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.2-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Tomfi Archetypes Parent</name>
   <description>Various archetypes for use with Maven.</description>
@@ -15,12 +15,11 @@
   </modules>
 
   <properties>
+    <archetype.version>3.2.1</archetype.version>
     <maven.compiler.release>11</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- Dependencies -->
     <extra-enforcer-rules.version>1.5.1</extra-enforcer-rules.version>
-    <!-- Extensions -->
-    <archetype-packaging.version>3.2.1</archetype-packaging.version>
     <!-- Plugins -->
     <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
     <maven-compiler-plugin.version>3.9.0</maven-compiler-plugin.version>
@@ -77,9 +76,21 @@
 
   <build>
 
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.archetype</groupId>
+        <artifactId>archetype-packaging</artifactId>
+        <version>${archetype.version}</version>
+      </extension>
+    </extensions>
+
     <pluginManagement>
       <plugins>
         <!-- Apache Plugins -->
+        <plugin>
+          <artifactId>maven-archetype-plugin</artifactId>
+          <version>${archetype.version}</version>
+        </plugin>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>${maven-clean-plugin.version}</version>

@@ -1,21 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <!-- <groupId>${groupId}</groupId>
+  <groupId>${groupId}</groupId>
   <artifactId>${artifactId}</artifactId>
-  <version>${version}</version> -->
-  <groupId>ttt</groupId>
-  <artifactId>aeass</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>${version}</version>
   <packaging>jar</packaging>
   <!-- TODO set project info -->
-  <name>${project.artifactId}</name>
+  <name>Example name</name>
   <description>Example description.</description>
   <url>https://example.com/</url>
   <inceptionYear>2022</inceptionYear>
 
   <properties>
-    <jacoco.coverage.minimum>85%</jacoco.coverage.minimum>
     <maven.compiler.release>11</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- Dependencies -->
