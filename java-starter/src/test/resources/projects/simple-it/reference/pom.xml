@@ -1,10 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>${groupId}</groupId>
-  <artifactId>${artifactId}</artifactId>
-  <version>${version}</version>
-  <packaging>jar</packaging>
+  <groupId>info.tomfi.archetypes.it</groupId>
+  <artifactId>simple-it</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
   <!-- TODO set project info -->
   <name>Example name</name>
   <description>Example description.</description>
@@ -12,18 +14,18 @@
   <inceptionYear>2022</inceptionYear>
 
   <properties>
-    <maven.compiler.release>11</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>17</maven.compiler.release>
     <!-- Dependencies -->
-    <assertj.version>3.22.0</assertj.version>
-    <junit-jupiter.version>5.8.2</junit-jupiter.version>
-    <mockito.version>4.2.0</mockito.version>
+    <assertj.version>${assertj.version}</assertj.version>
+    <junit-jupiter.version>${junit-jupiter.version}</junit-jupiter.version>
+    <mockito.version>${mockito.version}</mockito.version>
     <!-- Plugins -->
-    <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
-    <maven-compiler-plugin.version>3.9.0</maven-compiler-plugin.version>
-    <maven-jar-plugin.version>3.2.2</maven-jar-plugin.version>
-    <maven-site-plugin.version>3.10.0</maven-site-plugin.version>
-    <junit-platform-maven-plugin.version>1.1.6</junit-platform-maven-plugin.version>
+    <maven-clean-plugin.version>${maven-clean-plugin.version}</maven-clean-plugin.version>
+    <maven-compiler-plugin.version>${maven-compiler-plugin.version}</maven-compiler-plugin.version>
+    <maven-jar-plugin.version>${maven-jar-plugin.version}</maven-jar-plugin.version>
+    <maven-site-plugin.version>${maven-site-plugin.version}</maven-site-plugin.version>
+    <junit-platform-maven-plugin.version>${junit-platform-maven-plugin.version}</junit-platform-maven-plugin.version>
   </properties>
 
   <licenses>
@@ -40,27 +42,22 @@
       <dependency>
         <groupId>org.assertj</groupId>
         <artifactId>assertj-core</artifactId>
-        <version>${assertj.version}</version>
+        <version>\${assertj.version}</version>
       </dependency>
       <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-api</artifactId>
-        <version>${junit-jupiter.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-params</artifactId>
-        <version>${junit-jupiter.version}</version>
+        <version>\${junit-jupiter.version}</version>
       </dependency>
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
-        <version>${mockito.version}</version>
+        <version>\${mockito.version}</version>
       </dependency>
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-junit-jupiter</artifactId>
-        <version>${mockito.version}</version>
+        <version>\${mockito.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -90,35 +87,30 @@
   </dependencies>
 
   <build>
-
     <pluginManagement>
       <plugins>
         <!-- Apache Plugins -->
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
-          <version>${maven-clean-plugin.version}</version>
+          <version>\${maven-clean-plugin.version}</version>
         </plugin>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>${maven-compiler-plugin.version}</version>
+          <version>\${maven-compiler-plugin.version}</version>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>${maven-jar-plugin.version}</version>
+          <version>\${maven-jar-plugin.version}</version>
         </plugin>
         <plugin>
           <artifactId>maven-site-plugin</artifactId>
-          <version>${maven-site-plugin.version}</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-source-plugin</artifactId>
-          <version>${maven-source-plugin.version}</version>
+          <version>\${maven-site-plugin.version}</version>
         </plugin>
         <!-- Third Party Plugins -->
         <plugin>
           <groupId>de.sormuras.junit</groupId>
           <artifactId>junit-platform-maven-plugin</artifactId>
-          <version>${junit-platform-maven-plugin.version}</version>
+          <version>\${junit-platform-maven-plugin.version}</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -129,8 +121,6 @@
         <artifactId>junit-platform-maven-plugin</artifactId>
         <extensions>true</extensions>
         <configuration>
-          <isolation>ABSOLUTE</isolation>
-          <executor>JAVA</executor>
           <parameters>
             <junit.jupiter.execution.parallel.enabled>false</junit.jupiter.execution.parallel.enabled>
             <junit.jupiter.displayname.generator.default>org.junit.jupiter.api.DisplayNameGenerator$ReplaceUnderscores</junit.jupiter.displayname.generator.default>
@@ -140,5 +130,4 @@
     </plugins>
 
   </build>
-
 </project>

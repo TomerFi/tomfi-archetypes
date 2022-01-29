@@ -1,4 +1,4 @@
-package ${package};
+package $package;
 
 interface AppInterface {
   boolean running();

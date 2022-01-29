@@ -1,4 +1,4 @@
-package ${package};
+package $package;
 
 public final class AppRunner {
   private final AppInterface runningApp;

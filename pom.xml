@@ -3,7 +3,7 @@
 
   <groupId>info.tomfi.archetypes</groupId>
   <artifactId>tomfi-archetypes-parent</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>0.0.14-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Tomfi Archetypes Parent</name>
   <description>Various archetypes for use with Maven.</description>
@@ -11,16 +11,16 @@
   <inceptionYear>2022</inceptionYear>
 
   <modules>
-    <module>java-standard</module>
+    <module>java-starter</module>
   </modules>
 
   <properties>
     <archetype.version>3.2.1</archetype.version>
-    <maven.compiler.release>11</maven.compiler.release>
+    <maven.compiler.release>17</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- Dependencies -->
     <extra-enforcer-rules.version>1.5.1</extra-enforcer-rules.version>
-    <!-- Plugins -->
+    <!-- Plugins (may also be referenced in the submodules archetypes) -->
     <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
     <maven-compiler-plugin.version>3.9.0</maven-compiler-plugin.version>
     <maven-dependency-plugin.version>3.2.0</maven-dependency-plugin.version>
@@ -39,6 +39,11 @@
     <flatten-maven-plugin.version>1.2.7</flatten-maven-plugin.version>
     <license-maven-plugin.version>4.1</license-maven-plugin.version>
     <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
+    <!--  Used only in submodules archetypes -->
+    <assertj.version>3.22.0</assertj.version>
+    <junit-jupiter.version>5.8.2</junit-jupiter.version>
+    <mockito.version>4.3.1</mockito.version>
+    <junit-platform-maven-plugin.version>1.1.6</junit-platform-maven-plugin.version>
   </properties>
 
   <licenses>
@@ -75,7 +80,6 @@
   </ciManagement>
 
   <build>
-
     <extensions>
       <extension>
         <groupId>org.apache.maven.archetype</groupId>
@@ -84,12 +88,28 @@
       </extension>
     </extensions>
 
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+        <filtering>true</filtering>
+      </testResource>
+    </testResources>
+
     <pluginManagement>
       <plugins>
         <!-- Apache Plugins -->
         <plugin>
           <artifactId>maven-archetype-plugin</artifactId>
           <version>${archetype.version}</version>
+          <configuration>
+            <useDefaultExcludes>false</useDefaultExcludes>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
@@ -147,6 +167,10 @@
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>${maven-resources-plugin.version}</version>
+          <configuration>
+            <addDefaultExcludes>false</addDefaultExcludes>
+            <escapeString>\</escapeString>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-site-plugin</artifactId>
@@ -160,7 +184,6 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>${maven-surefire-plugin.version}</version>
         </plugin>
-
         <!-- Third Party Plugins -->
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -170,18 +193,16 @@
             <flattenMode>ossrh</flattenMode>
           </configuration>
         </plugin>
-
         <plugin>
           <groupId>org.sonatype.plugins</groupId>
           <artifactId>nexus-staging-maven-plugin</artifactId>
           <version>${nexus-staging-maven-plugin.version}</version>
         </plugin>
-
       </plugins>
     </pluginManagement>
 
-    <plugins>
 
+    <plugins>
       <plugin>
         <artifactId>maven-help-plugin</artifactId>
         <executions>
@@ -208,7 +229,7 @@
         </executions>
       </plugin>
 
-      <plugin>
+            <plugin>
         <artifactId>maven-enforcer-plugin</artifactId>
         <dependencies>
           <dependency>
@@ -228,7 +249,7 @@
           <rules>
             <dependencyConvergence />
             <requireJavaVersion>
-              <version>[11,)</version>
+              <version>[17,)</version>
             </requireJavaVersion>
             <requireMavenVersion>
               <version>[3.8,)</version>
@@ -238,12 +259,10 @@
           </rules>
         </configuration>
       </plugin>
-
     </plugins>
-
   </build>
 
-  <profiles>
+<profiles>
     <!-- use this profile manually when deploying to ossrh. -->
     <profile>
       <id>deploy-ossrh</id>
