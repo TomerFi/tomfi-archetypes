@@ -1,0 +1,1 @@
+verify -Pprepare-deployment -Pcov -Pmut

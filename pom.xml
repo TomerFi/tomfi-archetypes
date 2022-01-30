@@ -11,10 +11,11 @@
   <inceptionYear>2022</inceptionYear>
 
   <modules>
-    <module>java-starter</module>
-    <module>java-starter-mod</module>
-    <module>java-ready</module>
-    <module>java-ready-mod</module>
+    <module>java-playground</module>
+    <module>java-playground-mod</module>
+    <module>java-advanced</module>
+    <module>java-full</module>
+    <module>java-full-mod</module>
   </modules>
 
   <properties>
@@ -49,6 +50,8 @@
     <mockito.version>4.3.1</mockito.version>
     <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
     <junit-platform-maven-plugin.version>1.1.6</junit-platform-maven-plugin.version>
+    <pitest-maven.version>1.7.3</pitest-maven.version>
+    <pitest-junit5-plugin.version>0.15</pitest-junit5-plugin.version>
   </properties>
 
   <licenses>
