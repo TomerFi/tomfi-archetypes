@@ -10,6 +10,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+/** Application runner test cases. */
 @ExtendWith(MockitoExtension.class)
 class App_Runner_Test {
   @Mock private AppInterface mockApp;
