@@ -1,0 +1,10 @@
+--add-modules
+  jdk.unsupported,org.assertj.core,org.mockito,net.bytebuddy
+
+--add-reads
+  $module=org.assertj.core
+
+--add-opens
+  $module/$package=org.junit.platform.commons
+--add-opens
+  $module/$package=org.mockito

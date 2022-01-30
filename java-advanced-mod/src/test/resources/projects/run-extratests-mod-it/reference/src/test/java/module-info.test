@@ -1,0 +1,10 @@
+--add-modules
+  jdk.unsupported,org.assertj.core,org.mockito,net.bytebuddy
+
+--add-reads
+  run.extratests.mod.name=org.assertj.core
+
+--add-opens
+  run.extratests.mod.name/archetypes.it.run.extratests.mod=org.junit.platform.commons
+--add-opens
+  run.extratests.mod.name/archetypes.it.run.extratests.mod=org.mockito

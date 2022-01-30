@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>info.tomfi.archetypes.it</groupId>
+  <artifactId>run-extratests-mod-it</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <!-- TODO set project info -->
+  <name>Example name</name>
+  <description>Example description.</description>
+  <url>https://example.com/</url>
+  <inceptionYear>2022</inceptionYear>
+
+  <properties>
+    <coverage.threshold>85%</coverage.threshold>
+    <mutation.coverage.threshold>50</mutation.coverage.threshold>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>17</maven.compiler.release>
+    <!-- Dependencies -->
+    <assertj.version>${assertj.version}</assertj.version>
+    <junit-jupiter.version>${junit-jupiter.version}</junit-jupiter.version>
+    <mockito.version>${mockito.version}</mockito.version>
+    <!-- Plugins -->
+    <maven-clean-plugin.version>${maven-clean-plugin.version}</maven-clean-plugin.version>
+    <maven-compiler-plugin.version>${maven-compiler-plugin.version}</maven-compiler-plugin.version>
+    <maven-jar-plugin.version>${maven-jar-plugin.version}</maven-jar-plugin.version>
+    <maven-site-plugin.version>${maven-site-plugin.version}</maven-site-plugin.version>
+    <jacoco-maven-plugin.version>${jacoco-maven-plugin.version}</jacoco-maven-plugin.version>
+    <junit-platform-maven-plugin.version>${junit-platform-maven-plugin.version}</junit-platform-maven-plugin.version>
+    <pitest-maven.version>${pitest-maven.version}</pitest-maven.version>
+    <pitest-junit5-plugin.version>${pitest-junit5-plugin.version}</pitest-junit5-plugin.version>
+  </properties>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+			<distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- TESTING DEPENDENCIES -->
+      <dependency>
+        <groupId>org.assertj</groupId>
+        <artifactId>assertj-core</artifactId>
+        <version>\${assertj.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-api</artifactId>
+        <version>\${junit-jupiter.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-engine</artifactId>
+        <version>\${junit-jupiter.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <version>\${mockito.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-junit-jupiter</artifactId>
+        <version>\${mockito.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <!-- TESTING DEPENDENCIES -->
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-junit-jupiter</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <!-- Apache Plugins -->
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>\${maven-clean-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>\${maven-compiler-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>\${maven-jar-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>\${maven-site-plugin.version}</version>
+        </plugin>
+        <!-- Third Party Plugins -->
+        <plugin>
+          <groupId>de.sormuras.junit</groupId>
+          <artifactId>junit-platform-maven-plugin</artifactId>
+          <version>\${junit-platform-maven-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>\${jacoco-maven-plugin.version}</version>
+          <configuration>
+            <propertyName>jacoco.java.option</propertyName>
+            <rules>
+              <rule>
+                <limits>
+                  <limit>
+                    <minimum>\${coverage.threshold}</minimum>
+                  </limit>
+                </limits>
+              </rule>
+            </rules>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.pitest</groupId>
+          <artifactId>pitest-maven</artifactId>
+          <version>\${pitest-maven.version}</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.pitest</groupId>
+              <artifactId>pitest-junit5-plugin</artifactId>
+              <version>\${pitest-junit5-plugin.version}</version>
+            </dependency>
+          </dependencies>
+          <configuration>
+            <exportLineCoverage>true</exportLineCoverage>
+            <mutationThreshold>\${mutation.coverage.threshold}</mutationThreshold>
+            <mutators>
+              <mutator>STRONGER</mutator>
+            </mutators>
+            <timestampedReports>false</timestampedReports>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+    <plugins>
+      <plugin>
+        <groupId>de.sormuras.junit</groupId>
+        <artifactId>junit-platform-maven-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <executor>JAVA</executor>
+          <javaOptions>
+            <additionalOptions>
+              <jacoco>\${jacoco.java.option}</jacoco>
+            </additionalOptions>
+          </javaOptions>
+          <parameters>
+            <junit.jupiter.execution.parallel.enabled>false</junit.jupiter.execution.parallel.enabled>
+            <junit.jupiter.execution.parallel.mode.default>concurrent</junit.jupiter.execution.parallel.mode.default>
+            <junit.jupiter.displayname.generator.default>org.junit.jupiter.api.DisplayNameGenerator$ReplaceUnderscores</junit.jupiter.displayname.generator.default>
+          </parameters>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>prepare-agent</goal>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <!-- use this profile for development stage. -->
+    <profile>
+      <id>dev</id>
+      <properties>
+        <coverage.threshold>0%</coverage.threshold>
+        <mutation.coverage.threshold>0</mutation.coverage.threshold>
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+              <failOnWarning>false</failOnWarning>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <!-- Use this profile to create jacoco execution report. -->
+    <profile>
+      <id>cov</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>jacoco-report</id>
+                <goals>
+                    <goal>report</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <!-- Use this profile to execute mutation testing. -->
+    <profile>
+      <id>mut</id>
+      <dependencies>
+        <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-engine</artifactId>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.pitest</groupId>
+            <artifactId>pitest-maven</artifactId>
+            <executions>
+              <execution>
+                <phase>verify</phase>
+                <goals>
+                  <!-- REC: modify to scmMutationCoverage once the project starts -->
+                  <goal>mutationCoverage</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+</project>
