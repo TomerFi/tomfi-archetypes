@@ -4,9 +4,9 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>\${groupId}</groupId>
-  <artifactId>\${artifactId}</artifactId>
-  <version>\${version}</version>
+  <groupId>info.tomfi.archetypes.it</groupId>
+  <artifactId>run-unittests-it</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
   <!-- TODO set project info -->
   <name>Example name</name>
   <description>Example description.</description>
@@ -121,7 +121,6 @@
         <artifactId>junit-platform-maven-plugin</artifactId>
         <extensions>true</extensions>
         <configuration>
-          <executor>JAVA</executor>
           <parameters>
             <junit.jupiter.execution.parallel.enabled>false</junit.jupiter.execution.parallel.enabled>
             <junit.jupiter.execution.parallel.mode.default>concurrent</junit.jupiter.execution.parallel.mode.default>

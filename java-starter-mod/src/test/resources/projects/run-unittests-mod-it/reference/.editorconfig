@@ -13,10 +13,6 @@ max_line_length = 100
 end_of_line = lf
 trim_trailing_whitespace = true
 
-[**.groovy]
-indent_size = 4
-max_line_length = 120
-
 [**.{xml,fxml}]
 indent_style = space
 indent_size = 2

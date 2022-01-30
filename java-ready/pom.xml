@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>info.tomfi.archetypes</groupId>
-  <artifactId>java-starter</artifactId>
+  <artifactId>java-ready</artifactId>
   <version>0.0.14-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
-  <name>Tomfi Archetypes Java Starter</name>
-  <description>Java starter archetype.</description> <!-- TODO: better description -->
+  <name>Tomfi Archetypes Java Ready</name>
+  <description>Java ready archetype.</description> <!-- TODO: better description -->
   <url>https://github.com/TomerFi/tomfi-archetypes</url>
   <inceptionYear>2022</inceptionYear>
 

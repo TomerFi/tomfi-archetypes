@@ -13,6 +13,7 @@
   <modules>
     <module>java-starter</module>
     <module>java-starter-mod</module>
+    <module>java-ready</module>
   </modules>
 
   <properties>
@@ -21,6 +22,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- Dependencies -->
     <extra-enforcer-rules.version>1.5.1</extra-enforcer-rules.version>
+    <groovy.version>3.0.9</groovy.version>
     <!-- Plugins (may also be referenced in the submodules archetypes) -->
     <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
     <maven-compiler-plugin.version>3.9.0</maven-compiler-plugin.version>
@@ -38,27 +40,27 @@
     <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
     <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
     <flatten-maven-plugin.version>1.2.7</flatten-maven-plugin.version>
-    <license-maven-plugin.version>4.1</license-maven-plugin.version>
     <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
+    <versions-maven-plugin.version>2.9.0</versions-maven-plugin.version>
     <!--  Used only in submodules archetypes -->
     <assertj.version>3.22.0</assertj.version>
     <junit-jupiter.version>5.8.2</junit-jupiter.version>
     <mockito.version>4.3.1</mockito.version>
+    <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
     <junit-platform-maven-plugin.version>1.1.6</junit-platform-maven-plugin.version>
   </properties>
 
   <licenses>
     <license>
-      <name>The Apache License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
+      <name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+			<distribution>repo</distribution>
     </license>
   </licenses>
 
   <developers>
     <developer>
       <id>TomerFi</id>
-      <name>Tomer Figenblat</name>
       <url>https://github.com/TomerFi</url>
     </developer>
   </developers>
@@ -109,10 +111,16 @@
           <artifactId>maven-archetype-plugin</artifactId>
           <version>${archetype.version}</version>
           <configuration>
-            <debug>true</debug>
             <ignoreEOLStyle>true</ignoreEOLStyle>
             <useDefaultExcludes>false</useDefaultExcludes>
           </configuration>
+          <dependencies>
+            <dependency>
+              <groupId>org.codehaus.groovy</groupId>
+              <artifactId>groovy</artifactId>
+              <version>${groovy.version}</version>
+            </dependency>
+          </dependencies>
         </plugin>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
@@ -197,6 +205,11 @@
           </configuration>
         </plugin>
         <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>versions-maven-plugin</artifactId>
+          <version>${versions-maven-plugin.version}</version>
+        </plugin>
+        <plugin>
           <groupId>org.sonatype.plugins</groupId>
           <artifactId>nexus-staging-maven-plugin</artifactId>
           <version>${nexus-staging-maven-plugin.version}</version>
@@ -232,7 +245,7 @@
         </executions>
       </plugin>
 
-            <plugin>
+      <plugin>
         <artifactId>maven-enforcer-plugin</artifactId>
         <dependencies>
           <dependency>

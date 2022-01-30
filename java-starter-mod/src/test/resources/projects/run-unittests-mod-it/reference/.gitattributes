@@ -5,8 +5,8 @@
 *.pyc text eol=crlf diff=python
 *.cs text eol=crlf diff=csharp
 *.java text eol=lf diff=java
-*.groovy text eol=lf diff=java
-*.proto text eol=lf diff=text
+*.groovy text eol=crlf diff=java
+*.proto text eol=crlf diff=text
 # Documents
 *.csv text eol=crlf
 *.doc text eol=crlf diff=text
