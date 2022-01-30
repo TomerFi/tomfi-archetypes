@@ -1,0 +1,10 @@
+--add-modules
+  jdk.unsupported,org.assertj.core,org.mockito,net.bytebuddy
+
+--add-reads
+  simple.mod.name=org.assertj.core
+
+--add-opens
+  simple.mod.name/archetypes.it.simple.mod=org.junit.platform.commons
+--add-opens
+  simple.mod.name/archetypes.it.simple.mod=org.mockito
