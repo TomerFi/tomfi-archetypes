@@ -1,0 +1,10 @@
+--add-modules
+  jdk.unsupported,org.assertj.core,org.mockito,net.bytebuddy
+
+--add-reads
+  prepare.deployment.mod.name=org.assertj.core
+
+--add-opens
+  prepare.deployment.mod.name/archetypes.it.prepare.deployment.mod=org.junit.platform.commons
+--add-opens
+  prepare.deployment.mod.name/archetypes.it.prepare.deployment.mod=org.mockito
