@@ -7,6 +7,8 @@
   <requiredProperties>
     <requiredProperty key="developerId"/>
     <requiredProperty key="ownerId"/>
+    <requiredProperty key="ownerName"/>
+    <requiredProperty key="year"/>
   </requiredProperties>
 
   <fileSets>
@@ -45,6 +47,7 @@
     <fileSet filtered="true" >
 			<directory/>
 			<includes>
+        <include>LICENSE</include>
         <include>README.md</include>
 			</includes>
 		</fileSet>
