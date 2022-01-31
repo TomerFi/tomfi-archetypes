@@ -25,7 +25,7 @@ class Simple_Integration_Test {
   }
 
   @Test
-  void an_enacpsulated_stoped_application_should_not_be_registered_as_running() {
+  void an_enacpsulated_stopped_application_should_not_be_registered_as_running() {
     appImpl.stop();
     assertThat(runner.isAppRunning()).isFalse();
   }

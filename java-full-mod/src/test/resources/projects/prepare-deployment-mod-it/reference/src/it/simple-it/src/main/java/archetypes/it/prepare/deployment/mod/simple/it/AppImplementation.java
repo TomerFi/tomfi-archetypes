@@ -2,7 +2,8 @@ package archetypes.it.prepare.deployment.mod.simple.it;
 
 import archetypes.it.prepare.deployment.mod.AppInterface;
 
-class AppImplementation implements AppInterface {
+/** Concrete implementation of the AppInterface. */
+final class AppImplementation implements AppInterface {
   private boolean isRunning;
 
   @Override
@@ -10,10 +11,12 @@ class AppImplementation implements AppInterface {
     return this.isRunning;
   }
 
+  /** Use to start the application. */
   public void start() {
     isRunning = true;
   }
 
+  /** Use to stop the application. */
   public void stop() {
     isRunning = false;
   }
