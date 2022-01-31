@@ -36,6 +36,42 @@
       </includes>
     </fileSet>
     <fileSet>
+      <directory>src/it</directory>
+      <includes>
+        <include>settings.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true">
+      <directory>src/it/simple-it</directory>
+      <includes>
+        <include>pom.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" packaged="true">
+      <directory>src/it/simple-it/src/main/java</directory>
+      <excludes>
+        <exclude>module-info.java</exclude>
+      </excludes>
+    </fileSet>
+    <fileSet filtered="true" packaged="true">
+      <directory>src/it/simple-it/src/test/java</directory>
+      <excludes>
+        <exclude>module-info.test</exclude>
+      </excludes>
+    </fileSet>
+    <fileSet filtered="true">
+      <directory>src/it/simple-it/src/main/java</directory>
+      <includes>
+        <include>module-info.java</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true">
+      <directory>src/it/simple-it/src/test/java</directory>
+      <includes>
+        <include>module-info.test</include>
+      </includes>
+    </fileSet>
+    <fileSet>
 			<directory/>
 			<includes>
         <include>.editorconfig</include>

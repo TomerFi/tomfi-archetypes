@@ -1,0 +1,8 @@
+--add-modules
+  prepare.deployment.mod.name.simple.integrationtest,org.assertj.core
+
+--add-reads
+  prepare.deployment.mod.name.simple.integrationtest=org.assertj.core
+
+--add-opens
+  prepare.deployment.mod.name.simple.integrationtest/archetypes.it.prepare.deployment.mod.simple.it=org.junit.platform.commons

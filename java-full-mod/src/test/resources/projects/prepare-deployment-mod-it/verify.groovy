@@ -21,6 +21,7 @@ def targets = [
     "pit-reports/linecoverage.xml",
     "site/jacoco/index.html",
     "site/jacoco/jacoco.xml",
+    "it/simple-it/build.log",
     "$targetArtifactId-${targetVersion}.jar",
     "$targetArtifactId-$targetVersion-javadoc.jar",
     "$targetArtifactId-$targetVersion-sources.jar"]

@@ -53,6 +53,7 @@
     <junit-platform-maven-plugin.version>1.1.6</junit-platform-maven-plugin.version>
     <pitest-maven.version>1.7.3</pitest-maven.version>
     <pitest-junit5-plugin.version>0.15</pitest-junit5-plugin.version>
+    <maven-invoker-plugin.version>3.2.2</maven-invoker-plugin.version>
   </properties>
 
   <licenses>

@@ -1,0 +1,8 @@
+--add-modules
+  run.extratests.mod.name.simple.integrationtest,org.assertj.core
+
+--add-reads
+  run.extratests.mod.name.simple.integrationtest=org.assertj.core
+
+--add-opens
+  run.extratests.mod.name.simple.integrationtest/archetypes.it.run.extratests.mod.simple.it=org.junit.platform.commons

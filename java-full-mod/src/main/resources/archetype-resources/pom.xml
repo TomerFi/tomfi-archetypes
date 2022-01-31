@@ -32,6 +32,7 @@
     <maven-gpg-plugin.version>${maven-gpg-plugin.version}</maven-gpg-plugin.version>
     <maven-help-plugin.version>${maven-help-plugin.version}</maven-help-plugin.version>
     <maven-install-plugin.version>${maven-install-plugin.version}</maven-install-plugin.version>
+    <maven-invoker-plugin.version>${maven-invoker-plugin.version}</maven-invoker-plugin.version>
     <maven-jar-plugin.version>${maven-jar-plugin.version}</maven-jar-plugin.version>
     <maven-javadoc-plugin.version>${maven-javadoc-plugin.version}</maven-javadoc-plugin.version>
     <maven-release-plugin.version>${maven-release-plugin.version}</maven-release-plugin.version>
@@ -170,6 +171,10 @@
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
           <version>\${maven-install-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-invoker-plugin</artifactId>
+          <version>\${maven-invoker-plugin.version}</version>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
@@ -397,6 +402,34 @@
                 <id>jacoco-report</id>
                 <goals>
                     <goal>report</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <!-- Use this profile to execute integration testing. -->
+    <profile>
+      <id>its</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-invoker-plugin</artifactId>
+            <configuration>
+              <cloneProjectsTo>\${project.build.directory}/it</cloneProjectsTo>
+              <localRepositoryPath>\${project.build.directory}/local-it-repo</localRepositoryPath>
+              <goals>
+                <goal>test</goal>
+              </goals>
+              <settingsFile>src/it/settings.xml</settingsFile>
+              <showErrors>true</showErrors>
+            </configuration>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>install</goal>
+                  <goal>run</goal>
                 </goals>
               </execution>
             </executions>

@@ -19,7 +19,8 @@ def targets = [
     "pit-reports/index.html",
     "pit-reports/linecoverage.xml",
     "site/jacoco/index.html",
-    "site/jacoco/jacoco.xml"]
+    "site/jacoco/jacoco.xml",
+    "it/simple-it/build.log"]
 
 targets.every {
     isReadable targetPath.resolve(it)

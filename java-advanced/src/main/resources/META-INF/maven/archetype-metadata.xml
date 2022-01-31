@@ -12,6 +12,24 @@
       <directory>src/test/java</directory>
     </fileSet>
     <fileSet>
+      <directory>src/it</directory>
+      <includes>
+        <include>settings.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true">
+      <directory>src/it/simple-it</directory>
+      <includes>
+        <include>pom.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" packaged="true">
+      <directory>src/it/simple-it/src/main/java</directory>
+    </fileSet>
+    <fileSet filtered="true" packaged="true">
+      <directory>src/it/simple-it/src/test/java</directory>
+    </fileSet>
+    <fileSet>
 			<directory/>
 			<includes>
         <include>.editorconfig</include>

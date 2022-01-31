@@ -1,0 +1,8 @@
+--add-modules
+  ${module}.simple.integrationtest,org.assertj.core
+
+--add-reads
+  ${module}.simple.integrationtest=org.assertj.core
+
+--add-opens
+  ${module}.simple.integrationtest/${package}.simple.it=org.junit.platform.commons
