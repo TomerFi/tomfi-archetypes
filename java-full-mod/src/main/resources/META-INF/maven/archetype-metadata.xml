@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<archetype-descriptor xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
+<archetype-descriptor xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0
+  http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
   name="${artifactId}">
 
   <requiredProperties>
@@ -74,19 +76,19 @@
       </includes>
     </fileSet>
     <fileSet>
-			<directory/>
-			<includes>
+      <directory/>
+      <includes>
         <include>.editorconfig</include>
         <include>.gitattributes</include>
-				<include>.gitignore</include>
-			</includes>
-		</fileSet>
-    <fileSet filtered="true" >
-			<directory/>
-			<includes>
+        <include>.gitignore</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true">
+    <directory/>
+      <includes>
         <include>LICENSE</include>
         <include>README.md</include>
-			</includes>
-		</fileSet>
+      </includes>
+    </fileSet>
   </fileSets>
 </archetype-descriptor>
