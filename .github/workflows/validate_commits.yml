@@ -1,0 +1,25 @@
+---
+name: Validate commits
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  enforce-conventional:
+    runs-on: ubuntu-latest
+    name: Enforce conventional commits
+    steps:
+      - name: Source checkout
+        uses: actions/checkout@v2.4.0
+        with:
+          fetch-depth: 0
+
+      - name: Verify with commitlint
+        uses: wagoid/commitlint-github-action@v4.1.9
+        with:
+          configFile: ".github/configs/commitlintrc.yml"

@@ -1,0 +1,92 @@
+---
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: "Release title"
+        required: true
+      tweet:
+        description: "Tweet new release?"
+        required: false
+        default: "no"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    environment: deployment
+    name: Build, publish, release, and announce
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2.4.0
+        with:
+          fetch-depth: 0
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
+
+      - name: Setup Java 17
+        uses: actions/setup-java@v2.5.0
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: maven
+          server-id: ossrh
+          server-username: OSSRH_USERNAME
+          server-password: OSSRH_TOKEN
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          gpg-passphrase: GPG_PASSPHRASE
+
+      - name: Configure git
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - name: Determine version and create changelog
+        id: bumper
+        uses: tomerfi/version-bumper-action@1.1.2
+        with:
+          changelog: true
+          label: -SNAPSHOT
+
+      - name: Initiate an ssh agent
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+
+      - name: Deploy to OSSRH
+        env:
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        run: >
+          mvn release:prepare -B -ff
+          -Dtag=${{ steps.bumper.outputs.new_version }}
+          -DreleaseVersion=${{ steps.bumper.outputs.new_version }}
+          -DdevelopmentVersion=${{ steps.bumper.outputs.next_dev_iteration}}
+          && mvn release:perform -B -ff
+
+      - name: Create a release
+        id: gh_release
+        uses: actions/github-script@v5.0.0
+        with:
+          script: |
+            const response = await github.request('POST /repos/' + repo_name + '/releases', {
+              tag_name: ${{ steps.bumper.outputs.new_version }},
+              name: ${{ github.event.inputs.title }},
+              generate_release_notes: true
+            })
+            core.setOutput('html_url', response.data.html_url)
+
+      - name: Tweet new release
+        if: ${{ github.event.inputs.tweet == 'yes' }}
+        uses: lazy-actions/tweet-action@1.0.1
+        with:
+          oauth_consumer_key: ${{ secrets.TWITTER_API_KEY }}
+          oauth_consumer_secret: ${{ secrets.TWITTER_API_SECRET_KEY }}
+          oauth_token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          oauth_token_secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          message: |
+            🚀🎉 Tomfi-Archetypes ${{ steps.bumper.outputs.new_version }} has been released! 🎉🚀
+            ${{ steps.gh_release.outputs.html_url }}
+
+            #tomfi_maven_archetypes

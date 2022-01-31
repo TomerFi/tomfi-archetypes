@@ -1,0 +1,6 @@
+# https://github.com/marketplace/actions/labeler
+---
+"scope: project":
+  - ./*
+"scope: ci":
+  - .github/**/*
