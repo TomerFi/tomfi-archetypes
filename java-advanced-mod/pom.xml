@@ -6,17 +6,19 @@
 
   <groupId>info.tomfi.archetypes</groupId>
   <artifactId>java-advanced-mod</artifactId>
-  <version>0.0.14-SNAPSHOT</version>
+  <version>0.1.0-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
   <name>Tomfi Archetypes Java Advanced Modular</name>
-  <description>Java advanced modular archetype.</description> <!-- TODO: better description -->
+  <description>Java project ready for proffesionals.
+    A modular (JPMS) Java project, includes unit tests, code coverage, mutation tests, and integration tests.
+  </description>
   <url>https://github.com/TomerFi/tomfi-archetypes</url>
   <inceptionYear>2022</inceptionYear>
 
   <parent>
     <groupId>info.tomfi.archetypes</groupId>
     <artifactId>tomfi-archetypes-parent</artifactId>
-    <version>0.0.14-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
   </parent>
 
 </project>

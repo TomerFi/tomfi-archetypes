@@ -6,17 +6,20 @@
 
   <groupId>info.tomfi.archetypes</groupId>
   <artifactId>java-full-mod</artifactId>
-  <version>0.0.14-SNAPSHOT</version>
+  <version>0.1.0-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
   <name>Tomfi Archetypes Java Full Modular</name>
-  <description>Java full modular archetype.</description> <!-- TODO: better description -->
+  <description>Java project ready for OSSRH deployments.
+    A modular (JPMS) Java project, includes unit tests, code coverage, mutation tests, integration tests,
+    packaging, signing, licensing, and deployment configuration.
+  </description>
   <url>https://github.com/TomerFi/tomfi-archetypes</url>
   <inceptionYear>2022</inceptionYear>
 
   <parent>
     <groupId>info.tomfi.archetypes</groupId>
     <artifactId>tomfi-archetypes-parent</artifactId>
-    <version>0.0.14-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
   </parent>
 
 </project>

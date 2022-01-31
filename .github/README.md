@@ -2,6 +2,7 @@
 
 UNDER CONSTRUCTION...
 
+<!-- editorconfig-checker-disable -->
 <!-- Real Links -->
 [0]: https://search.maven.org/search?q=info.tomfi.archetypes
 [1]: https://openjdk.java.net/projects/jdk/17/
