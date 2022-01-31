@@ -11,19 +11,11 @@ propsPath.withInputStream {
 }
 
 def targetArtifactId = archetypeProps.get "artifactId"
-def targetVersion = archetypeProps.get "version"
 def targetPath = basePath.resolve "project/$targetArtifactId/target"
 
 def targets = [
-    "junit-platform/console-launcher.out.log",
-    "junit-platform/TEST-junit-jupiter.xml",
-    "pit-reports/index.html",
-    "pit-reports/linecoverage.xml",
-    "site/jacoco/index.html",
-    "site/jacoco/jacoco.xml",
-    "$targetArtifactId-${targetVersion}.jar",
-    "$targetArtifactId-$targetVersion-javadoc.jar",
-    "$targetArtifactId-$targetVersion-sources.jar"]
+    "junit-platform/junit-platform-summary.txt",
+    "junit-platform/TEST-junit-jupiter.xml"]
 
 targets.every {
     isReadable targetPath.resolve(it)

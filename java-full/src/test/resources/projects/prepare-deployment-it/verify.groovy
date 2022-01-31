@@ -12,17 +12,19 @@ propsPath.withInputStream {
 
 def targetArtifactId = archetypeProps.get "artifactId"
 def targetVersion = archetypeProps.get "version"
-
 def targetPath = basePath.resolve "project/$targetArtifactId/target"
 
-def targetPitReport = targetPath.resolve "pit-reports/index.html"
-def targetJacocoReport = targetPath.resolve "site/jacoco/index.html"
-def targetJar = targetPath.resolve("$targetArtifactId-${targetVersion}.jar")
-def targetJavadocJar = targetPath.resolve("$targetArtifactId-$targetVersion-javadoc.jar")
-def targetSourcesJar = targetPath.resolve("$targetArtifactId-$targetVersion-sources.jar")
+def targets = [
+    "junit-platform/console-launcher.out.log",
+    "junit-platform/TEST-junit-jupiter.xml",
+    "pit-reports/index.html",
+    "pit-reports/linecoverage.xml",
+    "site/jacoco/index.html",
+    "site/jacoco/jacoco.xml",
+    "$targetArtifactId-${targetVersion}.jar",
+    "$targetArtifactId-$targetVersion-javadoc.jar",
+    "$targetArtifactId-$targetVersion-sources.jar"]
 
-isReadable(targetPitReport) &&
-    isReadable(targetJacocoReport) &&
-    isReadable(targetJar) &&
-    isReadable(targetJavadocJar) &&
-    isReadable(targetSourcesJar)
+targets.every {
+    isReadable targetPath.resolve(it)
+}
