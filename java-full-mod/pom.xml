@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>info.tomfi.archetypes</groupId>
-  <artifactId>java-ready-mod</artifactId>
+  <artifactId>java-full-mod</artifactId>
   <version>0.0.14-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
   <name>Tomfi Archetypes Java Full Modular</name>

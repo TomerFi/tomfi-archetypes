@@ -54,6 +54,7 @@
     <pitest-maven.version>1.7.3</pitest-maven.version>
     <pitest-junit5-plugin.version>0.15</pitest-junit5-plugin.version>
     <maven-invoker-plugin.version>3.2.2</maven-invoker-plugin.version>
+    <license-maven-plugin.version>4.1</license-maven-plugin.version>
   </properties>
 
   <licenses>
