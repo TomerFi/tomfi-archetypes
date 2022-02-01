@@ -1,3 +1,4 @@
+<!-- markdownlint-disable first-line-heading -->
 MIT License
 
 Copyright (c) 2022 Tomer Figenblat
