@@ -1,7 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-  http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+  child.project.url.inherit.append.path="false">
 
   <modelVersion>4.0.0</modelVersion>
 
@@ -24,6 +23,7 @@
   </modules>
 
   <properties>
+    <main.basedir>${project.basedir}</main.basedir>
     <archetype.version>3.2.1</archetype.version>
     <maven.compiler.release>17</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -40,7 +40,6 @@
     <maven-help-plugin.version>3.2.0</maven-help-plugin.version>
     <maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
     <maven-jar-plugin.version>3.2.2</maven-jar-plugin.version>
-    <maven-javadoc-plugin.version>3.3.1</maven-javadoc-plugin.version>
     <maven-release-plugin.version>3.0.0-M5</maven-release-plugin.version>
     <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
     <maven-site-plugin.version>3.10.0</maven-site-plugin.version>
@@ -49,22 +48,24 @@
     <flatten-maven-plugin.version>1.2.7</flatten-maven-plugin.version>
     <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
     <versions-maven-plugin.version>2.9.0</versions-maven-plugin.version>
-    <!--  Used only in submodules archetypes -->
+    <!--  Dependencies used only in submodules archetypes -->
     <assertj.version>3.22.0</assertj.version>
     <junit-jupiter.version>5.8.2</junit-jupiter.version>
     <mockito.version>4.3.1</mockito.version>
+    <!--  Plugins used only in submodules archetypes -->
+    <maven-invoker-plugin.version>3.2.2</maven-invoker-plugin.version>
+    <maven-javadoc-plugin.version>3.3.1</maven-javadoc-plugin.version>
+    <license-maven-plugin.version>4.1</license-maven-plugin.version>
     <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
     <junit-platform-maven-plugin.version>1.1.6</junit-platform-maven-plugin.version>
     <pitest-maven.version>1.7.3</pitest-maven.version>
     <pitest-junit5-plugin.version>0.15</pitest-junit5-plugin.version>
-    <maven-invoker-plugin.version>3.2.2</maven-invoker-plugin.version>
-    <license-maven-plugin.version>4.1</license-maven-plugin.version>
   </properties>
 
   <licenses>
     <license>
       <name>MIT License</name>
-      <url>http://www.opensource.org/licenses/mit-license.php</url>
+      <url>https://opensource.org/licenses/MIT</url>
       <distribution>repo</distribution>
     </license>
   </licenses>
@@ -81,7 +82,10 @@
     <url>https://github.com/TomerFi/tomfi-archetypes/issues</url>
   </issueManagement>
 
-  <scm>
+  <scm child.scm.connection.inherit.append.path="false"
+    child.scm.developerConnection.inherit.append.path="false"
+    child.scm.url.inherit.append.path="false">
+
     <url>https://github.com/TomerFi/tomfi-archetypes</url>
     <connection>scm:git:git@github.com:TomerFi/tomfi-archetypes.git</connection>
     <developerConnection>scm:git:git@github.com:TomerFi/tomfi-archetypes.git</developerConnection>
@@ -107,6 +111,10 @@
         <directory>src/main/resources</directory>
         <filtering>true</filtering>
       </resource>
+      <resource>
+        <directory>${main.basedir}/common/main</directory>
+        <filtering>true</filtering>
+      </resource>
     </resources>
     <testResources>
       <testResource>
@@ -123,7 +131,11 @@
           <version>${archetype.version}</version>
           <configuration>
             <ignoreEOLStyle>true</ignoreEOLStyle>
+            <settingsFile>${main.basedir}/common/settings.xml</settingsFile>
             <useDefaultExcludes>false</useDefaultExcludes>
+            <properties>
+              <scriptsdir>${main.basedir}</scriptsdir>
+            </properties>
           </configuration>
           <dependencies>
             <dependency>
@@ -168,14 +180,6 @@
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>${maven-jar-plugin.version}</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-javadoc-plugin</artifactId>
-          <version>${maven-javadoc-plugin.version}</version>
-          <configuration>
-            <doclint>all,-missing</doclint>
-            <quiet>true</quiet>
-          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-release-plugin</artifactId>
@@ -341,18 +345,7 @@
             <executions>
               <execution>
                 <goals>
-                  <goal>jar</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-
-          <plugin>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>jar</goal>
+                  <goal>jar-no-fork</goal>
                 </goals>
               </execution>
             </executions>
