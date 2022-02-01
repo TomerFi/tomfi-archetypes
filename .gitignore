@@ -38,3 +38,4 @@ node_modules
 
 # project stuff
 *.log
+site/

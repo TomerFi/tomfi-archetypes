@@ -1,0 +1,55 @@
+site_name: TomFi Archetypes
+site_url: https://archetypes.info.tomfi
+site_author: Tomer Figenblat
+site_description: Quickly spin-up new Maven projects.
+
+repo_name: TomerFi/tomfi-archetypes
+repo_url: https://github.com/TomerFi/tomfi-archetypes
+edit_uri: ""
+
+copyright: Copyright &copy; 2022 Tomer Figenblat
+
+nav:
+  - Home: index.md
+  - License: license.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - tables
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/realTomFi
+      name: realTomfi on Twitter
+    - icon: fontawesome/brands/github
+      link: https://github.com/TomerFi
+      name: TomerFi on GitHub
+    - icon: fontawesome/brands/dev
+      link: https://dev.to/tomerfi
+      name: tomerfi on Dev.to
+
+plugins:
+  - git-revision-date
+
+theme:
+  name: material
+  features:
+    - content.code.annotate
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.integrate
