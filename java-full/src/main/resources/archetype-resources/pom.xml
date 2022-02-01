@@ -186,7 +186,6 @@
           <version>\${maven-javadoc-plugin.version}</version>
           <configuration>
             <doclint>all,-missing</doclint>
-            <quiet>true</quiet>
           </configuration>
         </plugin>
         <plugin>

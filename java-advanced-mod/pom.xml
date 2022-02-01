@@ -12,13 +12,15 @@
   <description>Java project ready for proffesionals.
     A modular (JPMS) Java project, includes unit tests, code coverage, mutation tests, and integration tests.
   </description>
-  <url>https://github.com/TomerFi/tomfi-archetypes</url>
-  <inceptionYear>2022</inceptionYear>
 
   <parent>
     <groupId>info.tomfi.archetypes</groupId>
     <artifactId>tomfi-archetypes-parent</artifactId>
     <version>0.1.0-SNAPSHOT</version>
   </parent>
+
+  <properties>
+    <main.basedir>${project.basedir}/..</main.basedir>
+  </properties>
 
 </project>

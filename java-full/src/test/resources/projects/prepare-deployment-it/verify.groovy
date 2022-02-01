@@ -1,20 +1,6 @@
-import static java.nio.file.Files.isReadable
+evaluate(new File(basedir, "tools.groovy"))
 
-import java.util.Properties
-
-def basePath = basedir.toPath()
-def propsPath = basePath.resolve "archetype.properties"
-
-def archetypeProps = new Properties()
-propsPath.withInputStream {
-    archetypeProps.load(it)
-}
-
-def targetArtifactId = archetypeProps.get "artifactId"
-def targetVersion = archetypeProps.get "version"
-def targetPath = basePath.resolve "project/$targetArtifactId/target"
-
-def targets = [
+verifyTargetFiles([
     "junit-platform/console-launcher.out.log",
     "junit-platform/TEST-junit-jupiter.xml",
     "pit-reports/index.html",
@@ -22,10 +8,6 @@ def targets = [
     "site/jacoco/index.html",
     "site/jacoco/jacoco.xml",
     "it/simple-it/build.log",
-    "$targetArtifactId-${targetVersion}.jar",
-    "$targetArtifactId-$targetVersion-javadoc.jar",
-    "$targetArtifactId-$targetVersion-sources.jar"]
-
-targets.every {
-    isReadable targetPath.resolve(it)
-}
+    "${deployableName}.jar",
+    "$deployableName-javadoc.jar",
+    "$deployableName-sources.jar"])
