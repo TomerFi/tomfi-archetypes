@@ -90,5 +90,8 @@
         <include>README.md</include>
       </includes>
     </fileSet>
+    <fileSet>
+      <directory>.mvn</directory>
+    </fileSet>
   </fileSets>
 </archetype-descriptor>

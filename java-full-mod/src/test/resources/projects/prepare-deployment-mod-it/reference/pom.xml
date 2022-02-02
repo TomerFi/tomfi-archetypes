@@ -514,6 +514,8 @@ https://opensource.org/licenses/MIT.]]>
       </distributionManagement>
       <build>
         <plugins>
+          <!-- Note that the staging plugin requires jpms instructions, see .mvn/jvm.config -->
+          <!-- https://issues.sonatype.org/browse/OSSRH-66257 -->
           <plugin>
             <groupId>org.sonatype.plugins</groupId>
             <artifactId>nexus-staging-maven-plugin</artifactId>
