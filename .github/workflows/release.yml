@@ -45,7 +45,6 @@ jobs:
         id: bumper
         uses: tomerfi/version-bumper-action@1.1.2
         with:
-          changelog: true
           label: -SNAPSHOT
 
       - name: Initiate an ssh agent
@@ -70,6 +69,7 @@ jobs:
         uses: actions/github-script@v5.1.0
         with:
           script: |
+            const repo_name = context.payload.repository.full_name
             const response = await github.request('POST /repos/' + repo_name + '/releases', {
               tag_name: ${{ steps.bumper.outputs.new_version }},
               name: ${{ github.event.inputs.title }},
