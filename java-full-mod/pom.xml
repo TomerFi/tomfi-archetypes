@@ -5,7 +5,7 @@
 
   <groupId>info.tomfi.archetypes</groupId>
   <artifactId>java-full-mod</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
   <name>Tomfi Archetypes Java Full Modular</name>
   <description>Java project ready for OSSRH deployments.
@@ -16,7 +16,7 @@
   <parent>
     <groupId>info.tomfi.archetypes</groupId>
     <artifactId>tomfi-archetypes-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
   </parent>
 
   <properties>
