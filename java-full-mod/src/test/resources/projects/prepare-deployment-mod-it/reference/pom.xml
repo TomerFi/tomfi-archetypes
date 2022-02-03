@@ -20,7 +20,6 @@
     <maven.compiler.release>17</maven.compiler.release>
     <!-- Dependencies -->
     <assertj.version>${assertj.version}</assertj.version>
-    <extra-enforcer-rules.version>${extra-enforcer-rules.version}</extra-enforcer-rules.version>
     <junit-jupiter.version>${junit-jupiter.version}</junit-jupiter.version>
     <mockito.version>${mockito.version}</mockito.version>
     <!-- Plugins -->
@@ -40,6 +39,7 @@
     <maven-site-plugin.version>${maven-site-plugin.version}</maven-site-plugin.version>
     <maven-source-plugin.version>${maven-source-plugin.version}</maven-source-plugin.version>
     <maven-surefire-plugin.version>${maven-surefire-plugin.version}</maven-surefire-plugin.version>
+    <extra-enforcer-rules.version>${extra-enforcer-rules.version}</extra-enforcer-rules.version>
     <flatten-maven-plugin.version>${flatten-maven-plugin.version}</flatten-maven-plugin.version>
     <jacoco-maven-plugin.version>${jacoco-maven-plugin.version}</jacoco-maven-plugin.version>
     <junit-platform-maven-plugin.version>${junit-platform-maven-plugin.version}</junit-platform-maven-plugin.version>
@@ -84,7 +84,7 @@
 
   <dependencyManagement>
     <dependencies>
-      <!-- TESTING DEPENDENCIES -->
+      <!-- Testing Dependencies -->
       <dependency>
         <groupId>org.assertj</groupId>
         <artifactId>assertj-core</artifactId>
@@ -114,7 +114,7 @@
   </dependencyManagement>
 
   <dependencies>
-    <!-- TESTING DEPENDENCIES -->
+    <!-- Testing Dependencies -->
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>

@@ -1,3 +1,4 @@
+---
 site_name: TomFi Archetypes
 site_url: https://archetypes.info.tomfi
 site_author: Tomer Figenblat
@@ -5,25 +6,47 @@ site_description: Quickly spin-up new Maven projects.
 
 repo_name: TomerFi/tomfi-archetypes
 repo_url: https://github.com/TomerFi/tomfi-archetypes
+#edit_uri: "edit/main/docs"
 edit_uri: ""
 
 copyright: Copyright &copy; 2022 Tomer Figenblat
 
 nav:
   - Home: index.md
+  - Glossary: glossary.md
+  - Archetypes:
+    - Java Playground: archetypes/java-playground.md
+    - Java Playground Modular: archetypes/java-playground-mod.md
+    - Java Advanced: archetypes/java-advanced.md
+    - Java Advanced Modular: archetypes/java-advanced-mod.md
+    - Java Full: archetypes/java-full.md
+  - Dependencies:
+    - Base Dependencies: dependencies/base-dependencies.md
+  - Plugins:
+    - Base Plugins: plugins/base-plugins.md
+    - Professional Plugins: plugins/professional-plugins.md
+    - Complete Plugins: plugins/complete-plugins.md
+  - Profiles:
+    - Professional Profiles: profiles/professional-profiles.md
+    - Complete Profiles: profiles/complete-profiles.md
+  - Build Examples: build-examples.md
   - License: license.md
 
 markdown_extensions:
   - admonition
+  - def_list
+  - pymdownx.betterem
   - pymdownx.details
-  - pymdownx.highlight:
-      anchor_linenums: true
+  - pymdownx.highlight
   - pymdownx.inlinehilite
+  - pymdownx.smartsymbols
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - tables
   - toc:
-      permalink: true
+      permalink: ⚓︎
 
 extra:
   social:
@@ -38,6 +61,7 @@ extra:
       name: tomerfi on Dev.to
 
 plugins:
+  - search
   - git-revision-date
 
 theme:

@@ -6,6 +6,11 @@
   http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
   name="${artifactId}">
 
+  <requiredProperties>
+    <requiredProperty key="ownerName"/>
+    <requiredProperty key="year"/>
+  </requiredProperties>
+
   <fileSets>
     <fileSet filtered="true" packaged="true">
       <directory>src/main/java</directory>
@@ -42,6 +47,7 @@
     <fileSet filtered="true">
     <directory/>
       <includes>
+        <include>LICENSE</include>
         <include>README.md</include>
       </includes>
     </fileSet>
