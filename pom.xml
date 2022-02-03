@@ -10,7 +10,7 @@
   <version>1.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Tomfi Archetypes Parent</name>
-  <description>Various archetypes for use with Maven.</description>
+  <description>Quickly spin up a GitHub-ready Java project with Maven.</description>
   <url>https://github.com/TomerFi/tomfi-archetypes</url>
   <inceptionYear>2022</inceptionYear>
 

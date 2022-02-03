@@ -20,6 +20,7 @@ nav:
     - Java Advanced: archetypes/java-advanced.md
     - Java Advanced Modular: archetypes/java-advanced-mod.md
     - Java Full: archetypes/java-full.md
+    - Java Full Modular: archetypes/java-full-mod.md
   - Dependencies:
     - Base Dependencies: dependencies/base-dependencies.md
   - Plugins:

@@ -1,3 +1,4 @@
+<!-- markdownlint-disable-file MD033 MD038 MD046  -->
 ```shell
 mvn archetype:generate \
 -DarchetypeGroupId=info.tomfi.archetypes \
@@ -20,9 +21,7 @@ mvn archetype:generate \
 
 ```shell
 $ tree -a my-artifact-demo/
-```
 
-```shell
 my-artifact-demo/
 ├── .editorconfig
 ├── .gitattributes
