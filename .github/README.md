@@ -1,7 +1,7 @@
 <!-- markdownlint-disable-next-line -->
 # Various day-to-day Maven archetypes</br>[![maven-central-version]][0] [![java-min-version]][1] [![gh-build-status]][2] [![gh-pages-status]][6] <!-- editorconfig-checker-disable-line -->
 
-Quickly spin up a [GitHub][5]-ready [Java][3] project with [Maven][4].
+Quickly spin up a [GitHub][5]-ready [Java][3] project with [Maven][4].</br>
 Check out the [documentation][7].
 
 <!-- editorconfig-checker-disable -->
