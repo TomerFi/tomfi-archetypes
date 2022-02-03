@@ -11,7 +11,7 @@
   <name>Example name</name>
   <description>Example description.</description>
   <url>https://example.com/</url>
-  <inceptionYear>2022</inceptionYear>
+  <inceptionYear>2042</inceptionYear>
 
   <properties>
     <coverage.threshold>85%</coverage.threshold>
@@ -44,7 +44,7 @@
 
   <dependencyManagement>
     <dependencies>
-      <!-- TESTING DEPENDENCIES -->
+      <!-- Testing Dependencies -->
       <dependency>
         <groupId>org.assertj</groupId>
         <artifactId>assertj-core</artifactId>
@@ -74,7 +74,7 @@
   </dependencyManagement>
 
   <dependencies>
-    <!-- TESTING DEPENDENCIES -->
+    <!-- Testing Dependencies -->
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>

@@ -11,7 +11,6 @@
   <name>Example name</name>
   <description>Example description.</description>
   <url>https://example.com/</url>
-  <inceptionYear>2022</inceptionYear>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -28,17 +27,9 @@
     <junit-platform-maven-plugin.version>${junit-platform-maven-plugin.version}</junit-platform-maven-plugin.version>
   </properties>
 
-  <licenses>
-    <license>
-      <name>MIT License</name>
-      <url>https://opensource.org/licenses/MIT</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
-
   <dependencyManagement>
     <dependencies>
-      <!-- TESTING DEPENDENCIES -->
+      <!-- Testing Dependencies -->
       <dependency>
         <groupId>org.assertj</groupId>
         <artifactId>assertj-core</artifactId>
@@ -63,7 +54,7 @@
   </dependencyManagement>
 
   <dependencies>
-    <!-- TESTING DEPENDENCIES -->
+    <!-- Testing Dependencies -->
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
