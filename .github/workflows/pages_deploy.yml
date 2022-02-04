@@ -34,5 +34,5 @@ jobs:
 
       - name: Deploy to GH Pages
         run: |
-          git checkout gh-pages
+          git pull origin main
           mkdocs gh-deploy -m 'docs: deployed to gh-pages for ${{ github.ref }}'

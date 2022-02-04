@@ -41,7 +41,7 @@ jobs:
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
 
-      - name: Determine version and create changelog
+      - name: Determine next semver
         id: bumper
         uses: tomerfi/version-bumper-action@1.1.2
         with:
