@@ -68,6 +68,12 @@
       
     </div>
     
+      <div data-md-component="outdated" hidden>
+        <aside class="md-banner md-banner--warning">
+          
+        </aside>
+      </div>
+    
     
       
 
@@ -753,37 +759,38 @@
 <dd>
 <p>The <em>Playground</em> <a href="/#archetypes">archetypes</a> configure the <a href="/dependencies/base-dependencies">base dependencies list</a>
 and <a href="/plugins/base-plugins">base plugins list</a>.</br>
-Choose a <em>Playground</em> archetype if you want to test something, hack a bit, play around, or simply quick start a
-project.</br>
-It uses <a href="https://github.com/sormuras/junit-platform-maven-plugin">de.sormuras.junit:junit-platform-maven-plugin</a> for unit testing.</p>
+<a href="https://github.com/sormuras/junit-platform-maven-plugin">junit-platform-maven-plugin</a> is used for unit testing.</br>
+<em>Playground</em> <a href="/#archetypes">archetypes</a> are mostly suitable if you want hack a bit, play around, or simply quick
+start a project.</p>
 </dd>
 <dt><code>Advanced</code></dt>
 <dd>
-<p>The <em>Advanced</em> <a href="/#archetypes">archetypes</a>, adds to the <em>Playground</em> <a href="/#archetypes">archetypes</a>, and configures the
-<a href="/plugins/professional-plugins">professional plugins list</a> and the
-<a href="/plugins/professional-profiles">professional profiles list</a>.</br>
-It introduces integration testing with <a href="https://maven.apache.org/plugins/maven-invoker-plugin">org.apache.maven.plugins:maven-invoker-plugin</a>, mutation testing with
-<a href="https://pitest.org/quickstart/maven/">org.pitest:pitest-maven.version</a>, and code coverage with <a href="https://www.eclemma.org/jacoco/trunk/doc/maven.html">org.jacoco:jacoco-maven-plugin</a>.</br>
-It also configure and includes a <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+<p>The <em>Advanced</em> <a href="/#archetypes">archetypes</a>, adds the <a href="/plugins/professional-plugins">professional plugins list</a> and
+the <a href="/plugins/professional-profiles">professional profiles list</a> on top of the <em>Playground</em>
+<a href="/#archetypes">archetypes</a>.</br>
+It introduces integration testing with <a href="https://maven.apache.org/plugins/maven-invoker-plugin">maven-invoker-plugin</a>, mutation testing with <a href="https://pitest.org/quickstart/maven/">pitest-maven.version</a>,
+and code coverage with <a href="https://www.eclemma.org/jacoco/trunk/doc/maven.html">jacoco-maven-plugin</a>. <a href="https://opensource.org/licenses/MIT">MIT License</a> is included.</br>
+<em>Advanced</em> <a href="/#archetypes">archetypes</a> are more suitable for stable projects, projects that are intended to be
+shared.</p>
 </dd>
 <dt><code>Full</code></dt>
 <dd>
-<p>The <em>Full</em> <a href="/#archetypes">archetypes</a> adds to the <em>Playground</em> and <em>Advanced</em> <a href="/#archetypes">archetypes</a>, and
-configures the <a href="/plugins/complete-plugins">complete plugins list</a> and the
-<a href="/plugins/complete-profiles">complete profiles list</a>.</br>
-It introduces enforcement of the base sources with <a href="https://maven.apache.org/plugins/maven-enforcer-plugin">org.apache.maven.plugins:maven-enforcer-plugin</a> and
-<a href="https://mycila.carbou.me/license-maven-plugin/">com.mycila:license-maven-plugin</a>, gpg signing with <a href="https://maven.apache.org/plugins/maven-gpg-plugin">org.apache.maven.plugins:maven-gpg-plugin</a>, and
-deploying to <em>Maven Central</em> using <a href="https://maven.apache.org/plugins/maven-release-plugin">org.apache.maven.plugins:maven-release-plugin</a> and
-<a href="https://github.com/sonatype/nexus-maven-plugins/tree/master/staging/maven-plugin">org.sonatype.plugins:nexus-staging-maven-plugin</a>.</br>
-It also configures all the required <em>pom</em> elements for maintaining a maven artifact, <em>developers</em>,
-<em>issueManagement</em>, <em>scm</em>, and <em>ciManagement</em>. The scm related elements are based on <a href="https://github.com/">GitHub</a> as an <em>SCM</em>
-prvider.</p>
+<p>The <em>Full</em> <a href="/#archetypes">archetypes</a> adds the <a href="/plugins/complete-plugins">complete plugins list</a> and the
+<a href="/plugins/complete-profiles">complete profiles list</a> on top of the <em>Advanced</em> <a href="/#archetypes">archetypes</a>.</br>
+It introduces enforcement of the base sources with <a href="https://maven.apache.org/plugins/maven-enforcer-plugin">maven-enforcer-plugin</a> and <a href="https://mycila.carbou.me/license-maven-plugin/">license-maven-plugin</a>, gpg
+signing with <a href="https://maven.apache.org/plugins/maven-gpg-plugin">maven-gpg-plugin</a>, and deploying to <a href="https://search.maven.org/">Maven Central</a> using <a href="https://maven.apache.org/plugins/maven-release-plugin">maven-release-plugin</a> and
+<a href="https://github.com/sonatype/nexus-maven-plugins/tree/master/staging/maven-plugin">nexus-staging-maven-plugin</a>.</br>
+The <a href="https://maven.apache.org/pom.html">pom</a> elements required for deploying and maintaining a <a href="https://maven.apache.org/">Maven</a> artifact, i.e. <em>developers</em>,
+<em>issueManagement</em>, <em>scm</em>, and <em>ciManagement</em>, are based on <a href="https://github.com/">GitHub</a> as a provider, the developer connection
+is ssh flavourd.</br>
+<em>Full</em> <a href="/#archetypes">archetypes</a> are meant to be used for projects that will eventually get deployed to an artifact
+repository, i.e. <a href="https://search.maven.org/">Maven Central</a>.</p>
 </dd>
 <dt><code>Modular</code></dt>
 <dd>
-<p>The <em>Modular</em> <a href="/#archetypes">archetypes</a>, identfied by the <em>-mod</em> prefix, are based on the above the
-<a href="/#archetypes">archetypes</a>, introducing <em>JPMS</em>, i.e. <em>module-info.java</em> for the main sources, and <em>module-info.test</em>
-for the test sources.</p>
+<p>The <em>Modular</em> <a href="/#archetypes">archetypes</a>, identfied by the <em>-mod</em> prefix, are build on top of the above the
+<a href="/#archetypes">archetypes</a>, introducing <a href="https://openjdk.java.net/projects/jigsaw/">JPMS (jigsaw)</a> to the project, i.e. <em>module-info.java</em> for the main
+sources, and <em>module-info.test</em> for the test sources.</p>
 </dd>
 </dl>
 
@@ -792,7 +799,7 @@ for the test sources.</p>
   <small>
     
       Last update:
-      2022-02-03
+      2022-02-04
     
   </small>
 </div>
@@ -892,7 +899,7 @@ for the test sources.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js", "version": "1.0.5"}</script>
     
     
       <script src="../assets/javascripts/bundle.960e086b.min.js"></script>

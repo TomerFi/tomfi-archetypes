@@ -73,6 +73,12 @@
       
     </div>
     
+      <div data-md-component="outdated" hidden>
+        <aside class="md-banner md-banner--warning">
+          
+        </aside>
+      </div>
+    
     
       
 
@@ -810,7 +816,7 @@
 
   <h1>Home</h1>
 
-<p>Quickly spin up a <a href="https://github.com/">GitHub</a>-ready <a href="https://www.oracle.com/java/technologies/downloads/#JDK17">Java</a> project with <a href="https://maven.apache.org/docs/3.8.4/release-notes.html">Maven</a>.</p>
+<p>Quickly spin up an updated <a href="https://git-scm.com/">Git</a> and <a href="https://github.com/">GitHub</a>-ready <a href="https://www.oracle.com/java/technologies/downloads/#JDK17">Java</a> project with <a href="https://maven.apache.org/docs/3.8.4/release-notes.html">Maven</a>.</p>
 <details class="- note">
 <summary>Glossary</summary>
 <dl>
@@ -818,37 +824,38 @@
 <dd>
 <p>The <em>Playground</em> <a href="/#archetypes">archetypes</a> configure the <a href="/dependencies/base-dependencies">base dependencies list</a>
 and <a href="/plugins/base-plugins">base plugins list</a>.</br>
-Choose a <em>Playground</em> archetype if you want to test something, hack a bit, play around, or simply quick start a
-project.</br>
-It uses <a href="https://www.oracle.com/java/technologies/downloads/#JDK17">de.sormuras.junit:junit-platform-maven-plugin</a> for unit testing.</p>
+<a href="https://www.oracle.com/java/technologies/downloads/#JDK17">junit-platform-maven-plugin</a> is used for unit testing.</br>
+<em>Playground</em> <a href="/#archetypes">archetypes</a> are mostly suitable if you want hack a bit, play around, or simply quick
+start a project.</p>
 </dd>
 <dt><code>Advanced</code></dt>
 <dd>
-<p>The <em>Advanced</em> <a href="/#archetypes">archetypes</a>, adds to the <em>Playground</em> <a href="/#archetypes">archetypes</a>, and configures the
-<a href="/plugins/professional-plugins">professional plugins list</a> and the
-<a href="/plugins/professional-profiles">professional profiles list</a>.</br>
-It introduces integration testing with <a href="https://maven.apache.org/docs/3.8.4/release-notes.html">org.apache.maven.plugins:maven-invoker-plugin</a>, mutation testing with
-<a href="https://editorconfig.org/">org.pitest:pitest-maven.version</a>, and code coverage with <a href="https://git-scm.com/docs/gitattributes">org.jacoco:jacoco-maven-plugin</a>.</br>
-It also configure and includes a <a href="https://git-scm.com/docs/gitignore">MIT License</a>.</p>
+<p>The <em>Advanced</em> <a href="/#archetypes">archetypes</a>, adds the <a href="/plugins/professional-plugins">professional plugins list</a> and
+the <a href="/plugins/professional-profiles">professional profiles list</a> on top of the <em>Playground</em>
+<a href="/#archetypes">archetypes</a>.</br>
+It introduces integration testing with <a href="https://maven.apache.org/docs/3.8.4/release-notes.html">maven-invoker-plugin</a>, mutation testing with <a href="https://editorconfig.org/">pitest-maven.version</a>,
+and code coverage with <a href="https://git-scm.com/docs/gitattributes">jacoco-maven-plugin</a>. <a href="https://git-scm.com/docs/gitignore">MIT License</a> is included.</br>
+<em>Advanced</em> <a href="/#archetypes">archetypes</a> are more suitable for stable projects, projects that are intended to be
+shared.</p>
 </dd>
 <dt><code>Full</code></dt>
 <dd>
-<p>The <em>Full</em> <a href="/#archetypes">archetypes</a> adds to the <em>Playground</em> and <em>Advanced</em> <a href="/#archetypes">archetypes</a>, and
-configures the <a href="/plugins/complete-plugins">complete plugins list</a> and the
-<a href="/plugins/complete-profiles">complete profiles list</a>.</br>
-It introduces enforcement of the base sources with <a href="https://github.com/">org.apache.maven.plugins:maven-enforcer-plugin</a> and
-<a href="https://maven.apache.org/plugins/maven-javadoc-plugin">com.mycila:license-maven-plugin</a>, gpg signing with <a href="https://maven.apache.org/plugins/maven-release-plugin">org.apache.maven.plugins:maven-gpg-plugin</a>, and
-deploying to <em>Maven Central</em> using <a href="https://maven.apache.org/plugins/maven-resources-plugin">org.apache.maven.plugins:maven-release-plugin</a> and
-<a href="https://maven.apache.org/plugins/maven-source-plugin">org.sonatype.plugins:nexus-staging-maven-plugin</a>.</br>
-It also configures all the required <em>pom</em> elements for maintaining a maven artifact, <em>developers</em>,
-<em>issueManagement</em>, <em>scm</em>, and <em>ciManagement</em>. The scm related elements are based on <a href="https://maven.apache.org/plugins/maven-surefire-plugin">GitHub</a> as an <em>SCM</em>
-prvider.</p>
+<p>The <em>Full</em> <a href="/#archetypes">archetypes</a> adds the <a href="/plugins/complete-plugins">complete plugins list</a> and the
+<a href="/plugins/complete-profiles">complete profiles list</a> on top of the <em>Advanced</em> <a href="/#archetypes">archetypes</a>.</br>
+It introduces enforcement of the base sources with <a href="https://github.com/">maven-enforcer-plugin</a> and <a href="https://git-scm.com/">license-maven-plugin</a>, gpg
+signing with <a href="https://maven.apache.org/plugins/maven-release-plugin">maven-gpg-plugin</a>, and deploying to <a href="https://www.mojohaus.org/extra-enforcer-rules">Maven Central</a> using <a href="https://maven.apache.org/plugins/maven-resources-plugin">maven-release-plugin</a> and
+<a href="https://maven.apache.org/plugins/maven-source-plugin">nexus-staging-maven-plugin</a>.</br>
+The <a href="https://mycila.carbou.me/license-maven-plugin/">pom</a> elements required for deploying and maintaining a <a href="https://github.com/sonatype/nexus-maven-plugins/tree/master/staging/maven-plugin">Maven</a> artifact, i.e. <em>developers</em>,
+<em>issueManagement</em>, <em>scm</em>, and <em>ciManagement</em>, are based on <a href="https://maven.apache.org/plugins/maven-surefire-plugin">GitHub</a> as a provider, the developer connection
+is ssh flavourd.</br>
+<em>Full</em> <a href="/#archetypes">archetypes</a> are meant to be used for projects that will eventually get deployed to an artifact
+repository, i.e. <a href="https://www.mojohaus.org/extra-enforcer-rules">Maven Central</a>.</p>
 </dd>
 <dt><code>Modular</code></dt>
 <dd>
-<p>The <em>Modular</em> <a href="/#archetypes">archetypes</a>, identfied by the <em>-mod</em> prefix, are based on the above the
-<a href="/#archetypes">archetypes</a>, introducing <em>JPMS</em>, i.e. <em>module-info.java</em> for the main sources, and <em>module-info.test</em>
-for the test sources.</p>
+<p>The <em>Modular</em> <a href="/#archetypes">archetypes</a>, identfied by the <em>-mod</em> prefix, are build on top of the above the
+<a href="/#archetypes">archetypes</a>, introducing <a href="https://www.mojohaus.org/flatten-maven-plugin">JPMS (jigsaw)</a> to the project, i.e. <em>module-info.java</em> for the main
+sources, and <em>module-info.test</em> for the test sources.</p>
 </dd>
 </dl>
 </details>
@@ -862,7 +869,7 @@ All archetypes include a <a href="https://editorconfig.org/">.editorconfig</a>, 
 <div class="highlight"><pre><span></span><code>mvn archetype:generate <span class="se">\</span>
 -DarchetypeGroupId<span class="o">=</span>info.tomfi.archetypes <span class="se">\</span>
 -DarchetypeArtifactId<span class="o">=</span>java-playground <span class="se">\</span>
--DarchetypeVersion<span class="o">=</span><span class="m">1</span>.0.4
+-DarchetypeVersion<span class="o">=</span><span class="m">1</span>.0.5
 </code></pre></div></p>
 <details class="- example">
 <summary>archetype properties</summary>
@@ -1052,7 +1059,7 @@ my-artifact-demo/
 <div class="highlight"><pre><span></span><code>mvn archetype:generate <span class="se">\</span>
 -DarchetypeGroupId<span class="o">=</span>info.tomfi.archetypes <span class="se">\</span>
 -DarchetypeArtifactId<span class="o">=</span>java-playground-mod <span class="se">\</span>
--DarchetypeVersion<span class="o">=</span><span class="m">1</span>.0.4
+-DarchetypeVersion<span class="o">=</span><span class="m">1</span>.0.5
 </code></pre></div></p>
 <details class="- example">
 <summary>archetype properties</summary>
@@ -1270,7 +1277,7 @@ my-artifact-demo/
 <div class="highlight"><pre><span></span><code>mvn archetype:generate <span class="se">\</span>
 -DarchetypeGroupId<span class="o">=</span>info.tomfi.archetypes <span class="se">\</span>
 -DarchetypeArtifactId<span class="o">=</span>java-advanced <span class="se">\</span>
--DarchetypeVersion<span class="o">=</span><span class="m">1</span>.0.4
+-DarchetypeVersion<span class="o">=</span><span class="m">1</span>.0.5
 </code></pre></div></p>
 <details class="- example">
 <summary>archetype properties</summary>
@@ -1726,7 +1733,7 @@ my-artifact-demo/
 <div class="highlight"><pre><span></span><code>mvn archetype:generate <span class="se">\</span>
 -DarchetypeGroupId<span class="o">=</span>info.tomfi.archetypes <span class="se">\</span>
 -DarchetypeArtifactId<span class="o">=</span>java-advanced-mod <span class="se">\</span>
--DarchetypeVersion<span class="o">=</span><span class="m">1</span>.0.4
+-DarchetypeVersion<span class="o">=</span><span class="m">1</span>.0.5
 </code></pre></div></p>
 <details class="- example">
 <summary>archetype properties</summary>
@@ -2237,7 +2244,7 @@ my-artifact-demo/
 <div class="highlight"><pre><span></span><code>mvn archetype:generate <span class="se">\</span>
 -DarchetypeGroupId<span class="o">=</span>info.tomfi.archetypes <span class="se">\</span>
 -DarchetypeArtifactId<span class="o">=</span>java-full <span class="se">\</span>
--DarchetypeVersion<span class="o">=</span><span class="m">1</span>.0.4
+-DarchetypeVersion<span class="o">=</span><span class="m">1</span>.0.5
 </code></pre></div></p>
 <details class="- example">
 <summary>archetype properties</summary>
@@ -2850,7 +2857,7 @@ my-artifact-demo/
       <span class="nt">&lt;/distributionManagement&gt;</span>
       <span class="nt">&lt;build&gt;</span>
         <span class="nt">&lt;plugins&gt;</span>
-          <span class="cm">&lt;!-- example that the staging plugin requires jpms instructions, see .mvn/jvm.config --&gt;</span>
+          <span class="cm">&lt;!-- Note that the staging plugin requires jpms instructions, see .mvn/jvm.config --&gt;</span>
           <span class="cm">&lt;!-- https://issues.sonatype.org/browse/OSSRH-66257 --&gt;</span>
           <span class="nt">&lt;plugin&gt;</span>
             <span class="nt">&lt;groupId&gt;</span>org.sonatype.plugins<span class="nt">&lt;/groupId&gt;</span>
@@ -3002,7 +3009,7 @@ my-artifact-demo/
 <div class="highlight"><pre><span></span><code>mvn archetype:generate <span class="se">\</span>
 -DarchetypeGroupId<span class="o">=</span>info.tomfi.archetypes <span class="se">\</span>
 -DarchetypeArtifactId<span class="o">=</span>java-full-mod <span class="se">\</span>
--DarchetypeVersion<span class="o">=</span><span class="m">1</span>.0.4
+-DarchetypeVersion<span class="o">=</span><span class="m">1</span>.0.5
 </code></pre></div></p>
 <details class="- example">
 <summary>archetype properties</summary>
@@ -3623,7 +3630,7 @@ my-artifact-demo/
       <span class="nt">&lt;/distributionManagement&gt;</span>
       <span class="nt">&lt;build&gt;</span>
         <span class="nt">&lt;plugins&gt;</span>
-          <span class="cm">&lt;!-- example that the staging plugin requires jpms instructions, see .mvn/jvm.config --&gt;</span>
+          <span class="cm">&lt;!-- Note that the staging plugin requires jpms instructions, see .mvn/jvm.config --&gt;</span>
           <span class="cm">&lt;!-- https://issues.sonatype.org/browse/OSSRH-66257 --&gt;</span>
           <span class="nt">&lt;plugin&gt;</span>
             <span class="nt">&lt;groupId&gt;</span>org.sonatype.plugins<span class="nt">&lt;/groupId&gt;</span>
@@ -3848,7 +3855,7 @@ type <strong>Advanced</strong> and <strong>Full</strong>:</p>
 <li><a href="https://git-scm.com/docs/gitattributes">org.apache.maven.plugins:maven-gpg-plugin</a></li>
 <li><a href="https://git-scm.com/docs/gitignore">org.apache.maven.plugins:maven-help-plugin</a></li>
 <li><a href="https://github.com/">org.apache.maven.plugins:maven-install-plugin</a></li>
-<li><a href="https://maven.apache.org/plugins/maven-javadoc-plugin">org.apache.maven.plugins:maven-javadoc-plugin</a></li>
+<li><a href="https://git-scm.com/">org.apache.maven.plugins:maven-javadoc-plugin</a></li>
 <li><a href="https://maven.apache.org/plugins/maven-release-plugin">org.apache.maven.plugins:maven-release-plugin</a></li>
 <li><a href="https://maven.apache.org/plugins/maven-resources-plugin">org.apache.maven.plugins:maven-resources-plugin</a></li>
 <li><a href="https://maven.apache.org/plugins/maven-source-plugin">org.apache.maven.plugins:maven-source-plugin</a></li>
@@ -3880,27 +3887,34 @@ type <strong>Advanced</strong> and <strong>Full</strong>:</p>
 </ul>
 <h2 id="build-examples">Build Examples<a class="headerlink" href="#build-examples" title="Permanent link">⚓︎</a></h2>
 <p>Here are a couple of <a href="https://www.oracle.com/java/technologies/downloads/#JDK17">Maven</a> build commands to get you started:</p>
-<ul>
-<li><code>mvn test</code> will compile and perform unit tests on the build for all <a href="/#archetypes">archetypes</a> types.</li>
-<li><code>mvn verify -Pcov -Pits -Pmut</code> will compile, perform unit, integration, and mutatation tests, as well as enfroce
-  source validations for the <em>Advanced</em> and <em>Full</em> types <a href="/#archetypes">archetypes</a>.</li>
-<li><code>mvn package -Pprepare-deployment</code> will compile, perform unit tests, and package all the <em>jar</em> archives for <em>Full</em>
-  type <a href="/#archetypes">archetypes</a>.</li>
-<li><code>mvn install -Pcov -Pits -Pmut -Pprepare-deployment -Psign-deployment</code> will compile, perform unit, integration,
-  and mutatation tests, as well as enfroce source validations, package all the <em>jar</em> archives and eventually
-  installing to the local <a href="https://www.oracle.com/java/technologies/downloads/#JDK17">Maven</a> repo, for <a href="/#archetypes">archetypes</a> of type <em>Full</em>.</li>
-<li><code>mvn release:prepare -Dtag=1.2.3 -DreleaseVersion=1.2.3 -DdevelopmentVersion=1.2.4-SNAPSHOT</code> and then
-  <code>mvn release:perform</code>, will compile, perform unit tests, as well as enfroce source validations, package all the
-  <em>jar</em> archives, install them to the local <a href="https://www.oracle.com/java/technologies/downloads/#JDK17">Maven</a> repo, and eventually deploy them to <a href="https://maven.apache.org/docs/3.8.4/release-notes.html">Sonatype OSSRH</a>
-  artifact repository (<a href="https://editorconfig.org/">Maven Central</a>) for <a href="/#archetypes">archetypes</a> of type <em>Full</em>.</li>
-</ul>
+<div class="highlight"><pre><span></span><code>mvn <span class="nb">test</span>
+</code></pre></div>
+<p>will compile and perform unit tests on the build for all <a href="/#archetypes">archetypes</a> types.</p>
+<div class="highlight"><pre><span></span><code>mvn verify -Pcov -Pits -Pmut
+</code></pre></div>
+<p>will compile, perform unit, integration, and mutation tests, as well as enforce source validations for the <em>Advanced</em>
+and <em>Full</em> types <a href="/#archetypes">archetypes</a>.</p>
+<div class="highlight"><pre><span></span><code>mvn package -Pprepare-deployment
+</code></pre></div>
+<p>will compile, perform unit tests, and package all the <em>jar</em> archives for the <em>Full</em> type <a href="/#archetypes">archetypes</a>.</p>
+<div class="highlight"><pre><span></span><code>mvn install -Pcov -Pits -Pmut -Pprepare-deployment -Psign-deployment
+</code></pre></div>
+<p>will compile, perform unit, integration, and mutation tests, as well as enforce source validations, package all the
+<em>jar</em> archives and eventually install to the local <a href="https://www.oracle.com/java/technologies/downloads/#JDK17">Maven</a> repo (<em>~/.m2/repository</em>), for <a href="/#archetypes">archetypes</a>
+of type <em>Full</em>.</p>
+<div class="highlight"><pre><span></span><code>mvn release:prepare -Dtag<span class="o">=</span><span class="m">1</span>.2.3 -DreleaseVersion<span class="o">=</span><span class="m">1</span>.2.3 -DdevelopmentVersion<span class="o">=</span><span class="m">1</span>.2.4-SNAPSHOT <span class="se">\</span>
+<span class="o">&amp;&amp;</span> mvn release:perform
+</code></pre></div>
+<p>will compile, perform unit tests, as well as enfroce source validations, package all the <em>jar</em> archives, install them to
+the local <a href="https://www.oracle.com/java/technologies/downloads/#JDK17">Maven</a> repo (<em>~/.m2/repository</em>), and eventually deploy them to <a href="https://maven.apache.org/docs/3.8.4/release-notes.html">Sonatype OSSRH</a> artifact repository
+(<a href="https://editorconfig.org/">Maven Central</a>) for <a href="/#archetypes">archetypes</a> of type <em>Full</em>.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2022-02-03
+      2022-02-04
     
   </small>
 </div>
@@ -3985,7 +3999,7 @@ type <strong>Advanced</strong> and <strong>Full</strong>:</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.annotate", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.annotate", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.22074ed6.min.js", "version": "1.0.5"}</script>
     
     
       <script src="assets/javascripts/bundle.960e086b.min.js"></script>
