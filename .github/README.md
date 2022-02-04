@@ -8,7 +8,7 @@ Check out the [documentation][7] for more examples and anything else you might n
 mvn archetype:generate \
 -DarchetypeGroupId=info.tomfi.archetypes \
 -DarchetypeArtifactId=java-advanced \
--DarchetypeVersion=1.0.4
+-DarchetypeVersion=1.0.5
 ```
 
 <!-- editorconfig-checker-disable -->
