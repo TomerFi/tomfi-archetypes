@@ -3,7 +3,7 @@ name: Pages Deploy
 
 on:
   release:
-    types: [released]
+    types: [published]
 
 jobs:
   deploy-pages:
@@ -27,12 +27,17 @@ jobs:
         uses: actions/cache@v2.1.7
         with:
           path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
 
       - name: Prepare python environment
         run: pip install -rrequirements.txt
 
+      - name: Configure git
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+
       - name: Deploy to GH Pages
         run: |
-          git pull origin main
+          git pull origin ${{ github.event.repository.default_branch }}
           mkdocs gh-deploy -m 'docs: deployed to gh-pages for ${{ github.ref }}'

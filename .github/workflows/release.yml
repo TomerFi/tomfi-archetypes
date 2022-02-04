@@ -79,6 +79,7 @@ jobs:
         id: gh_release
         uses: actions/github-script@v5.1.0
         with:
+          github-token: ${{ secrets.RELEASE_PAT }}
           script: |
             const repo_name = context.payload.repository.full_name
             const response = await github.request('POST /repos/' + repo_name + '/releases', {
