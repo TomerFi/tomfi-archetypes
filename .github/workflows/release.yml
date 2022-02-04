@@ -80,8 +80,7 @@ jobs:
         uses: actions/github-script@v5.1.0
         with:
           script: |
-            const repo_name = context.payload.repository.full_name
-            const response = await github.request('POST /repos/' + repo_name + '/releases', {
+            const response = await github.request('POST /repos/TomerFi/tomfi-archetypes/releases', {
               tag_name: ${{ steps.bumper.outputs.new_version }},
               name: ${{ github.event.inputs.title }},
               generate_release_notes: true
