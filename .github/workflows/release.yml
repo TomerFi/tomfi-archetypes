@@ -104,5 +104,6 @@ jobs:
           message: |
             🚀🎉 Tomfi-Archetypes ${{ steps.bumper.outputs.new_version }} has been released! 🎉🚀
             ${{ steps.gh_release.outputs.html_url }}
+            https://archetypes.tomfi.info/
 
             #tomfi_maven_archetypes #java #maven #maven_archetypes
