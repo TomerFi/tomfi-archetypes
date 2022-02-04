@@ -1,4 +1,4 @@
-Quickly spin up a [GitHub][5]-ready [Java][0] project with [Maven][1].
+Quickly spin up an updated [Git][6] and [GitHub][5]-ready [Java][0] project with [Maven][1].
 
 ???- note "Glossary"
     --8<-- "docs/glossary.md"
@@ -56,3 +56,4 @@ docs/profiles/complete-profiles.md
 [3]: https://git-scm.com/docs/gitattributes
 [4]: https://git-scm.com/docs/gitignore
 [5]: https://github.com/
+[6]: https://git-scm.com/

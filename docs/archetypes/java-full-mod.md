@@ -591,7 +591,7 @@ my-artifact-demo/
           </distributionManagement>
           <build>
             <plugins>
-              <!-- example that the staging plugin requires jpms instructions, see .mvn/jvm.config -->
+              <!-- Note that the staging plugin requires jpms instructions, see .mvn/jvm.config -->
               <!-- https://issues.sonatype.org/browse/OSSRH-66257 -->
               <plugin>
                 <groupId>org.sonatype.plugins</groupId>
