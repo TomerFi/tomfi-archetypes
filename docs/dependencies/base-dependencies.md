@@ -1,4 +1,4 @@
-The *base dependencies* appear on all [archetypes](/#archetypes):
+The *base dependencies* appear on **all** [archetypes](/#archetypes):
 
 - [org.assertj:assertj-core (test)][0]
 - [org.junit.jupiter:junit-jupiter-api (test)][1]

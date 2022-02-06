@@ -1,13 +1,59 @@
-<!-- markdownlint-disable-next-line -->
-# TomFi's Maven archetypes</br>[![maven-central-version]][0] [![java-min-version]][1] [![gh-build-status]][2] [![gh-pages-status]][6] <!-- editorconfig-checker-disable-line -->
+# TomFi's Maven Archetypes</br>[![artifact-version]][0] [![java-version]][1] [![status-build]][2] [![status-pages]][6]
 
 Quickly spin up an updated [Git][8] and [GitHub][5]-ready [Java][3] project with [Maven][4].</br>
-Check out the [documentation][7] for more examples and anything else you might need to know.
+Check out the [documentation][7] for anything else you might need to know.
+
+[Java Playground Archetype](https://archetypes.tomfi.info/archetypes/java-playground/)
+
+```shell
+mvn archetype:generate \
+-DarchetypeGroupId=info.tomfi.archetypes \
+-DarchetypeArtifactId=java-playground \
+-DarchetypeVersion=1.0.5
+```
+
+[Java Playground Modular Archetype](https://archetypes.tomfi.info/archetypes/java-playground-mod/)
+
+```shell
+mvn archetype:generate \
+-DarchetypeGroupId=info.tomfi.archetypes \
+-DarchetypeArtifactId=java-playground-mod \
+-DarchetypeVersion=1.0.5
+```
+
+[Java Advanced Archetype](https://archetypes.tomfi.info/archetypes/java-advanced/)
 
 ```shell
 mvn archetype:generate \
 -DarchetypeGroupId=info.tomfi.archetypes \
 -DarchetypeArtifactId=java-advanced \
+-DarchetypeVersion=1.0.5
+```
+
+[Java Advanced Modular Archetype](https://archetypes.tomfi.info/archetypes/java-advanced-mod/)
+
+```shell
+mvn archetype:generate \
+-DarchetypeGroupId=info.tomfi.archetypes \
+-DarchetypeArtifactId=java-advanced-mod \
+-DarchetypeVersion=1.0.5
+```
+
+[Java Full Archetype](https://archetypes.tomfi.info/archetypes/java-full/)
+
+```shell
+mvn archetype:generate \
+-DarchetypeGroupId=info.tomfi.archetypes \
+-DarchetypeArtifactId=java-full \
+-DarchetypeVersion=1.0.5
+```
+
+[Java Full Modular Archetype](https://archetypes.tomfi.info/archetypes/java-full-mod/)
+
+```shell
+mvn archetype:generate \
+-DarchetypeGroupId=info.tomfi.archetypes \
+-DarchetypeArtifactId=java-full-mod \
 -DarchetypeVersion=1.0.5
 ```
 
@@ -23,7 +69,7 @@ mvn archetype:generate \
 [7]: https://archetypes.tomfi.info/
 [8]: https://git-scm.com/
 <!-- Badges Links -->
-[gh-build-status]: https://github.com/TomerFi/tomfi-archetypes/actions/workflows/stage.yml/badge.svg
-[gh-pages-status]: https://github.com/TomerFi/tomfi-archetypes/actions/workflows/pages_deploy.yml/badge.svg
-[maven-central-version]: https://badgen.net/maven/v/maven-central/info.tomfi.archetypes/tomfi-archetypes-parent?icon=maven&label=Maven%20Central
-[java-min-version]: https://badgen.net/badge/Java%20Version/17/5382a1
+[artifact-version]: https://badgen.net/maven/v/maven-central/info.tomfi.archetypes/tomfi-archetypes-parent?icon=maven&label=Maven%20Central
+[java-version]: https://badgen.net/badge/Java%20Version/17/5382a1
+[status-build]: https://github.com/TomerFi/tomfi-archetypes/actions/workflows/stage.yml/badge.svg
+[status-pages]: https://github.com/TomerFi/tomfi-archetypes/actions/workflows/pages_deploy.yml/badge.svg

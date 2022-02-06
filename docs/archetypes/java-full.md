@@ -1,5 +1,5 @@
 <!-- markdownlint-disable-file MD033 MD038  MD046  -->
-```shell
+``` shell hl_lines="3"
 mvn archetype:generate \
 -DarchetypeGroupId=info.tomfi.archetypes \
 -DarchetypeArtifactId=java-full \
@@ -86,7 +86,7 @@ my-artifact-demo/
       <inceptionYear>2042</inceptionYear>
 
       <properties>
-        <coverage.threshold>85%</coverage.threshold>
+        <code.coverage.threshold>85%</code.coverage.threshold>
         <mutation.coverage.threshold>50</mutation.coverage.threshold>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>17</maven.compiler.release>
@@ -338,7 +338,7 @@ my-artifact-demo/
                   <rule>
                     <limits>
                       <limit>
-                        <minimum>${coverage.threshold}</minimum>
+                        <minimum>${code.coverage.threshold}</minimum>
                       </limit>
                     </limits>
                   </rule>
@@ -482,7 +482,7 @@ my-artifact-demo/
         <profile>
           <id>dev</id>
           <properties>
-            <coverage.threshold>0%</coverage.threshold>
+            <code.coverage.threshold>0%</code.coverage.threshold>
             <mutation.coverage.threshold>0</mutation.coverage.threshold>
             <enforcer.skip>true</enforcer.skip>
             <license.skip>true</license.skip>

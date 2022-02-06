@@ -61,6 +61,12 @@ extra:
     - icon: fontawesome/brands/dev
       link: https://dev.to/tomerfi
       name: tomerfi on Dev.to
+    - icon: fontawesome/brands/redhat
+      link: https://developers.redhat.com/author/tomerfi
+      name: tomerfi on Red Hat Developer
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/tomerfi/
+      name: tomerfi on LinkedIn
 
 plugins:
   - search
@@ -68,8 +74,23 @@ plugins:
 
 theme:
   name: material
+  font:
+    code: Fira Code
+    text: Open Sans
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
   features:
     - content.code.annotate
+    - header.autohide
     - navigation.indexes
     - navigation.tabs
     - navigation.tabs.sticky
