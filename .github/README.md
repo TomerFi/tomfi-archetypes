@@ -1,7 +1,7 @@
 # TomFi's Maven Archetypes</br>[![artifact-version]][0] [![java-version]][1] [![status-build]][2] [![status-pages]][6]
 
 Quickly spin up an updated [Git][8] and [GitHub][5]-ready [Java][3] project with [Maven][4].</br>
-Check out the [documentation][7] for anything else you might need to know.
+Check out the [documentation][7] for all the rest more information.
 
 [Java Playground Archetype](https://archetypes.tomfi.info/archetypes/java-playground/)
 
