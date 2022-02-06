@@ -1,7 +1,7 @@
 # TomFi's Maven Archetypes</br>[![artifact-version]][0] [![java-version]][1] [![status-build]][2] [![status-pages]][6]
 
 Quickly spin up an updated [Git][8] and [GitHub][5]-ready [Java][3] project with [Maven][4].</br>
-Check out the [documentation][7] for anything else you might need to know, i.e. the archetypes [glossray][9].
+Check out the [documentation][7] for anything else you might need to know.
 
 [Java Playground Archetype](https://archetypes.tomfi.info/archetypes/java-playground/)
 
@@ -68,7 +68,6 @@ mvn archetype:generate \
 [6]: https://github.com/TomerFi/tomfi-archetypes/actions/workflows/pages_deploy.yml
 [7]: https://archetypes.tomfi.info/
 [8]: https://git-scm.com/
-[9]: https://archetypes.tomfi.info/glossary/
 <!-- Badges Links -->
 [artifact-version]: https://badgen.net/maven/v/maven-central/info.tomfi.archetypes/tomfi-archetypes-parent?icon=maven&label=Maven%20Central
 [java-version]: https://badgen.net/badge/Java%20Version/17/5382a1

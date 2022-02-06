@@ -1,5 +1,5 @@
 <!-- markdownlint-disable-file MD033 MD038 MD046  -->
-```shell
+``` shell hl_lines="3"
 mvn archetype:generate \
 -DarchetypeGroupId=info.tomfi.archetypes \
 -DarchetypeArtifactId=java-advanced \
