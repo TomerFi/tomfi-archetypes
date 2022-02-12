@@ -9,7 +9,7 @@ Check out the [documentation][7] for all the rest more information.
 mvn archetype:generate \
 -DarchetypeGroupId=info.tomfi.archetypes \
 -DarchetypeArtifactId=java-playground \
--DarchetypeVersion=1.0.5
+-DarchetypeVersion=1.0.6
 ```
 
 [Java Playground Modular Archetype](https://archetypes.tomfi.info/archetypes/java-playground-mod/)
@@ -18,7 +18,7 @@ mvn archetype:generate \
 mvn archetype:generate \
 -DarchetypeGroupId=info.tomfi.archetypes \
 -DarchetypeArtifactId=java-playground-mod \
--DarchetypeVersion=1.0.5
+-DarchetypeVersion=1.0.6
 ```
 
 [Java Advanced Archetype](https://archetypes.tomfi.info/archetypes/java-advanced/)
@@ -27,7 +27,7 @@ mvn archetype:generate \
 mvn archetype:generate \
 -DarchetypeGroupId=info.tomfi.archetypes \
 -DarchetypeArtifactId=java-advanced \
--DarchetypeVersion=1.0.5
+-DarchetypeVersion=1.0.6
 ```
 
 [Java Advanced Modular Archetype](https://archetypes.tomfi.info/archetypes/java-advanced-mod/)
@@ -36,7 +36,7 @@ mvn archetype:generate \
 mvn archetype:generate \
 -DarchetypeGroupId=info.tomfi.archetypes \
 -DarchetypeArtifactId=java-advanced-mod \
--DarchetypeVersion=1.0.5
+-DarchetypeVersion=1.0.6
 ```
 
 [Java Full Archetype](https://archetypes.tomfi.info/archetypes/java-full/)
@@ -45,7 +45,7 @@ mvn archetype:generate \
 mvn archetype:generate \
 -DarchetypeGroupId=info.tomfi.archetypes \
 -DarchetypeArtifactId=java-full \
--DarchetypeVersion=1.0.5
+-DarchetypeVersion=1.0.6
 ```
 
 [Java Full Modular Archetype](https://archetypes.tomfi.info/archetypes/java-full-mod/)
@@ -54,7 +54,7 @@ mvn archetype:generate \
 mvn archetype:generate \
 -DarchetypeGroupId=info.tomfi.archetypes \
 -DarchetypeArtifactId=java-full-mod \
--DarchetypeVersion=1.0.5
+-DarchetypeVersion=1.0.6
 ```
 
 <!-- editorconfig-checker-disable -->
