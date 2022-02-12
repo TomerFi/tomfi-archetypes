@@ -4,7 +4,7 @@
 
   <groupId>info.tomfi.archetypes</groupId>
   <artifactId>tomfi-archetypes-parent</artifactId>
-  <version>1.0.6</version>
+  <version>1.0.7-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Tomfi Archetypes Parent</name>
   <description>Quickly spin up a GitHub-ready Java project with Maven.</description>
@@ -85,7 +85,7 @@
     <url>https://github.com/TomerFi/tomfi-archetypes</url>
     <connection>scm:git:git@github.com:TomerFi/tomfi-archetypes.git</connection>
     <developerConnection>scm:git:git@github.com:TomerFi/tomfi-archetypes.git</developerConnection>
-    <tag>1.0.6</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <ciManagement>
