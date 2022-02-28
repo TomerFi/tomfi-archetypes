@@ -72,4 +72,4 @@ mvn archetype:generate \
 [artifact-version]: https://badgen.net/maven/v/maven-central/info.tomfi.archetypes/tomfi-archetypes-parent?icon=maven&label=Maven%20Central
 [java-version]: https://badgen.net/badge/Java%20Version/17/5382a1
 [status-build]: https://github.com/TomerFi/tomfi-archetypes/actions/workflows/stage.yml/badge.svg
-[status-pages]: https://github.com/TomerFi/tomfi-archetypes/actions/workflows/pages_deploy.yml/badge.svg
+[status-pages]: https://github.com/TomerFi/tomfi-archetypes/actions/workflows/pages.yml/badge.svg
