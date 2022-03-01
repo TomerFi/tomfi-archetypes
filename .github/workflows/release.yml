@@ -53,11 +53,13 @@ jobs:
           ssh-private-key: ${{ secrets.DEPLOY_KEY }}
 
       - name: Update documentation with new version
+        # yamllint disable rule:line-length
         # editorconfig-checker-disable
         run: |
           sed -i 's/DarchetypeVersion=.*/DarchetypeVersion=${{ steps.bumper.outputs.new_version }}/g' docs/archetypes/*.md
           sed -i 's/DarchetypeVersion=.*/DarchetypeVersion=${{ steps.bumper.outputs.new_version }}/g' .github/README.md
           sed -i 's/  version: .*/  version: "${{ steps.bumper.outputs.new_version }}"/g' mkdocs.yml
+        # yamllint enable rule:line-length
         # editorconfig-checker-enable
 
       - name: Commit modifications
