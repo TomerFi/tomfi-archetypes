@@ -6,7 +6,7 @@ on:
     inputs:
       title:
         description: "Release title"
-        required: true
+        required: false
       tweet:
         description: "Tweet new release?"
         required: false
@@ -41,7 +41,7 @@ jobs:
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
 
-      - name: Determine next semver
+      - name: Determine next SemVer
         id: bumper
         uses: tomerfi/version-bumper-action@1.1.2
         with:
@@ -51,6 +51,42 @@ jobs:
         uses: webfactory/ssh-agent@v0.5.4
         with:
           ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+
+      - name: Deploy to OSSRH
+        env:
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        run: >
+          mvn release:prepare release:perform -B -ff
+          -Dtag=${{ steps.bumper.outputs.new_version }}
+          -DreleaseVersion=${{ steps.bumper.outputs.new_version }}
+          -DdevelopmentVersion=${{ steps.bumper.outputs.next_dev_iteration}}
+
+      - name: Create a release name
+        id: release_name
+        uses: actions/github-script@v6
+        with:
+          script: |
+            var retval = '${{ steps.bumper.outputs.new_version }}'
+            if ('${{ github.event.inputs.title }}') {
+              retval = retval.concat(' - ${{ github.event.inputs.title }}')
+            }
+            core.setOutput('value', retval)
+
+      - name: Create a release
+        id: gh_release
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.RELEASE_PAT }}
+          script: |
+            const repo_name = context.payload.repository.full_name
+            const response = await github.request('POST /repos/' + repo_name + '/releases', {
+              tag_name: '${{ steps.bumper.outputs.new_version }}',
+              name: '${{ steps.release_name.outputs.value }}',
+              generate_release_notes: true
+            })
+            core.setOutput('html_url', response.data.html_url)
 
       - name: Update documentation with new version
         # yamllint disable rule:line-length
@@ -68,32 +104,6 @@ jobs:
           git add .github/README.md
           git add mkdocs.yml
           git commit -m "docs: updated docs with ${{ steps.bumper.outputs.new_version }} [skip ci]"
-
-      - name: Deploy to OSSRH
-        env:
-          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
-          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-        run: >
-          mvn release:prepare -B -ff
-          -Dtag=${{ steps.bumper.outputs.new_version }}
-          -DreleaseVersion=${{ steps.bumper.outputs.new_version }}
-          -DdevelopmentVersion=${{ steps.bumper.outputs.next_dev_iteration}}
-          && mvn release:perform -B -ff
-
-      - name: Create a release
-        id: gh_release
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.RELEASE_PAT }}
-          script: |
-            const repo_name = context.payload.repository.full_name
-            const response = await github.request('POST /repos/' + repo_name + '/releases', {
-              tag_name: '${{ steps.bumper.outputs.new_version }}',
-              name: '${{ github.event.inputs.title }}',
-              generate_release_notes: true
-            })
-            core.setOutput('html_url', response.data.html_url)
 
       - name: Tweet new release
         if: ${{ github.event.inputs.tweet == 'yes' }}
