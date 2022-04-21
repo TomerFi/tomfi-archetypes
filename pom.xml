@@ -1,4 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd" child.project.url.inherit.append.path="false">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd" child.project.url.inherit.append.path="false"><!-- editorconfig-checker-disable-line -->
 
   <modelVersion>4.0.0</modelVersion>
 
@@ -44,7 +44,7 @@
     <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
     <maven-surefire-plugin.version>3.0.0-M6</maven-surefire-plugin.version>
     <flatten-maven-plugin.version>1.2.7</flatten-maven-plugin.version>
-    <nexus-staging-maven-plugin.version>1.6.12</nexus-staging-maven-plugin.version>
+    <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
     <versions-maven-plugin.version>2.10.0</versions-maven-plugin.version>
     <!--  Dependencies used only in submodules archetypes -->
     <assertj.version>3.22.0</assertj.version>
@@ -80,7 +80,7 @@
     <url>https://github.com/TomerFi/tomfi-archetypes/issues</url>
   </issueManagement>
 
-  <scm child.scm.connection.inherit.append.path="false" child.scm.developerConnection.inherit.append.path="false" child.scm.url.inherit.append.path="false">
+  <scm child.scm.connection.inherit.append.path="false" child.scm.developerConnection.inherit.append.path="false" child.scm.url.inherit.append.path="false"><!-- editorconfig-checker-disable-line -->
 
     <url>https://github.com/TomerFi/tomfi-archetypes</url>
     <connection>scm:git:git@github.com:TomerFi/tomfi-archetypes.git</connection>
