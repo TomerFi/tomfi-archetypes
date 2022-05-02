@@ -65,7 +65,7 @@ mvn archetype:generate \
 [3]: https://www.oracle.com/java/technologies/downloads/#JDK17
 [4]: https://maven.apache.org/docs/3.8.4/release-notes.html
 [5]: https://github.com/
-[6]: https://github.com/TomerFi/tomfi-archetypes/actions/workflows/pages_deploy.yml
+[6]: https://github.com/TomerFi/tomfi-archetypes/actions/workflows/pages.yml
 [7]: https://archetypes.tomfi.info/
 [8]: https://git-scm.com/
 <!-- Badges Links -->
