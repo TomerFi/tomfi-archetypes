@@ -36,6 +36,9 @@ target
 # Node
 node_modules
 
+# Python
+.venv
+
 # project stuff
 *.log
 site/
