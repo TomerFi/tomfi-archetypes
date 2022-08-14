@@ -95,7 +95,7 @@ jobs:
           sed -i 's/DarchetypeVersion=.*/DarchetypeVersion=${{ steps.bumper.outputs.new_version }}/g' docs/archetypes/*.md
           sed -i 's/DarchetypeVersion=.*/DarchetypeVersion=${{ steps.bumper.outputs.new_version }}/g' .github/README.md
           sed -i 's/  version: .*/  version: "${{ steps.bumper.outputs.new_version }}"/g' mkdocs.yml
-          sed -i 's/const currentVersion = ".*/const currentVersion = "${{ steps.bumper.outputs.new_version }}"/g' generator.js
+          sed -i 's/const currentVersion = ".*/const currentVersion = "${{ steps.bumper.outputs.new_version }}"/g' docs/generator.js
         # yamllint enable rule:line-length
         # editorconfig-checker-enable
 
@@ -104,6 +104,7 @@ jobs:
           git add docs/archetypes
           git add .github/README.md
           git add mkdocs.yml
+          git add docs/generator.js
           git commit -m "docs: updated docs with ${{ steps.bumper.outputs.new_version }} [skip ci]"
 
       - name: Tweet new release
