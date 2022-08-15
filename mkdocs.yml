@@ -102,5 +102,8 @@ theme:
     - search.suggest
     - toc.integrate
 
+extra_css:
+  - generator.css
+
 extra_javascript:
   - generator.js

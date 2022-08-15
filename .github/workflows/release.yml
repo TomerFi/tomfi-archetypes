@@ -95,7 +95,7 @@ jobs:
           sed -i 's/DarchetypeVersion=.*/DarchetypeVersion=${{ steps.bumper.outputs.new_version }}/g' docs/archetypes/*.md
           sed -i 's/DarchetypeVersion=.*/DarchetypeVersion=${{ steps.bumper.outputs.new_version }}/g' .github/README.md
           sed -i 's/  version: .*/  version: "${{ steps.bumper.outputs.new_version }}"/g' mkdocs.yml
-          sed -i 's/const currentVersion = ".*/const currentVersion = "${{ steps.bumper.outputs.new_version }}"/g' docs/generator.js
+          sed -i 's/const currentVersion = .*/const currentVersion = "${{ steps.bumper.outputs.new_version }}"/g' docs/generator.js
         # yamllint enable rule:line-length
         # editorconfig-checker-enable
 

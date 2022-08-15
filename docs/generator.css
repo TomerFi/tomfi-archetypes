@@ -1,0 +1,56 @@
+.control_panel {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: medium;
+    cursor: pointer;
+    border-color: #e7e7e7;
+    border-radius: 10px;
+    margin:10px;
+}
+.control_panel:hover {
+    background: #e7e7e7;
+}
+.error_message {
+    color: red;
+    font-size: x-large;
+}
+.props_table {
+    table-layout: fixed;
+    width: 675;
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+.props_table_caption {
+    font-family: 'Rock Salt', cursive;
+    padding: 20px;
+    font-style: italic;
+    font-size: x-large;
+    caption-side: top;
+    color: #666;
+    text-align: left;
+    letter-spacing: 1px;
+}
+.props_table_head_col {
+    width: 150px;
+    font-family: "Inconsolata";
+    letter-spacing: 1px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+    font-size: larger;
+}
+.props_table_value_input {
+    font-family: "Droid Sans";
+    border  : none;
+    padding : 0 10px;
+    margin  : 0;
+    width: 475px;
+    background: none;
+    font-size: larger;
+}
+.command_text {
+    font-size: x-large;
+    resize: none;
+    width: 675px;
+    height: 200px;
+}
