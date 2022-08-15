@@ -3,7 +3,7 @@ const PATTERN_ARTIFACT = /^.*[a-zA-Z0-9]+.*$/;
 const PATTERN_VERSION = /^(\d+)\.(\d+)\.(\d+)(?:-SNAPSHOT)?$/;
 const PATTERN_YEAR = /^\d{4}$/;
 
-const currentVersion = "1.1.3"
+const currentVersion = "1.1.4"
 
 $(document).ready(function() {
     function showProps(className, isModular) {
@@ -158,7 +158,7 @@ $(document).ready(function() {
     });
 
     $("button#copy").click(function() {
-        navigator.clipboard.writeText($("textarea#command").val())
+        navigator.clipboard.writeText($("textarea#command").val().replace(/\n/g, " "))
             .then(() => alert("maven command copied to clipboard, have fun!"));
     });
 });
