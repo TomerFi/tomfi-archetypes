@@ -3,7 +3,11 @@
 Quickly spin up an updated [Git][8] and [GitHub][5]-ready [Java][3] project with [Maven][4].</br>
 Check out the [documentation][7] for all the rest more information.
 
-:rocket: **We now have a maven command generator, check it out [here][9]**.
+---
+
+:rocket: **We now have a maven command generator, check it out [here][9]**. :rocket:
+
+---
 
 [Java Playground Archetype](https://archetypes.tomfi.info/archetypes/java-playground/)
 
