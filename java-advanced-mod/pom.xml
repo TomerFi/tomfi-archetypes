@@ -6,7 +6,7 @@
 
   <groupId>info.tomfi.archetypes</groupId>
   <artifactId>java-advanced-mod</artifactId>
-  <version>1.1.4-SNAPSHOT</version>
+  <version>1.1.4</version>
   <packaging>maven-archetype</packaging>
   <name>Tomfi Archetypes Java Advanced Modular</name>
   <description>Java project ready for proffesionals.
@@ -16,7 +16,7 @@
   <parent>
     <groupId>info.tomfi.archetypes</groupId>
     <artifactId>tomfi-archetypes-parent</artifactId>
-    <version>1.1.4-SNAPSHOT</version>
+    <version>1.1.4</version>
   </parent>
 
   <properties>
