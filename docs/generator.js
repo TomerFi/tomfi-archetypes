@@ -158,7 +158,7 @@ $(document).ready(function() {
     });
 
     $("button#copy").click(function() {
-        navigator.clipboard.writeText($("textarea#command").val())
+        navigator.clipboard.writeText($("textarea#command").val().replace(/\n/g, " "))
             .then(() => alert("maven command copied to clipboard, have fun!"));
     });
 });
