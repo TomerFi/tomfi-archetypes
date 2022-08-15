@@ -1,4 +1,9 @@
-const currentVersion = "1.0.6";
+const PATTERN_PACKAGE = /^[a-z][a-z0-9_]*(\.[a-z0-9_]+)+[0-9a-z_]$/;
+const PATTERN_ARTIFACT = /^.*[a-zA-Z0-9]+.*$/;
+const PATTERN_VERSION = /^(\d+)\.(\d+)\.(\d+)(?:-SNAPSHOT)?$/;
+const PATTERN_YEAR = /^\d{4}$/;
+
+const currentVersion = "1.0.6"
 
 $(document).ready(function() {
     function showProps(className, isModular) {
@@ -52,38 +57,104 @@ $(document).ready(function() {
         $("select#project_type").change();
         $("textarea#command").val("");
         $(".command").hide();
+        $("span#error").text("");
+        $("span#error").hide();
     });
 
     $("button#generate").click(function() {
-        if ($("form#properties").valid()) {
-            let command = ["mvn archetype:generate -B",
-                "-DarchetypeGroupId=info.tomfi.archetypes",
-                "-DarchetypeArtifactId=java-playground",
-                `-DarchetypeVersion=${currentVersion}`,
-                `-DgroupId=${$("input#group_id").val()}`,
-                `-DartifactId=${$("input#artifact_id").val()}`,
-                `-Dversion=${$("input#version").val()}`,
-                `-Dpackage=${$("input#package").val()}`];
+        $("span#error").text("");
+        $("span#error").hide();
 
-            let selection = $("select#project_type").val();
-
-            if (selection.startsWith("advanced")) {
-                command.push(`-DownerName=${$("input#owner_name").val()}`);
-                command.push(`-Dyear=${$("input#year").val()}`);
-            }
-
-            if (selection.startsWith("full")) {
-                command.push(`-DdeveloperId=${$("input#developer_id").val()}`);
-                command.push(`-DownerId=${$("input#owner_id").val()}`);
-            }
-
-            if (selection.endsWith("_mod")) {
-                command.push(`-Dmodule=${$("input#module").val()}`);
-            }
-
-            $("textarea#command").text(command.join(" "));
-            $(".command").show();
+        let groupId = $("input#group_id").val();
+        if (!groupId.match(PATTERN_PACKAGE)) {
+            $("span#error").text("verify group id");
+            $("span#error").show();
+            return;
         }
+
+        let artifactId = $("input#artifact_id").val();
+        if (!artifactId.match(PATTERN_ARTIFACT)) {
+            $("span#error").text("verify artifact id");
+            $("span#error").show();
+            return;
+        }
+
+        let version = $("input#version").val();
+        if (!version.match(PATTERN_VERSION)) {
+            $("span#error").text("verify version");
+            $("span#error").show();
+            return;
+        }
+
+        let packag = $("input#package").val();
+        if (!packag.match(PATTERN_PACKAGE)) {
+            $("span#error").text("verify package");
+            $("span#error").show();
+            return;
+        }
+
+        let command = ["mvn archetype:generate -B",
+            "-DarchetypeGroupId=info.tomfi.archetypes",
+            "-DarchetypeArtifactId=java-playground",
+            `-DarchetypeVersion=${currentVersion}`,
+            `-DgroupId=${groupId}`,
+            `-DartifactId=${artifactId}`,
+            `-Dversion=${version}`,
+            `-Dpackage=${packag}`];
+
+        let selection = $("select#project_type").val();
+
+        if (selection.startsWith("advanced") || selection.startsWith("full")) {
+            let ownerName = $("input#owner_name").val();
+            if (!ownerName.match(PATTERN_ARTIFACT)) {
+                $("span#error").text("verify owner name");
+                $("span#error").show();
+                return;
+            }
+
+            let year = $("input#year").val();
+            if (!year.match(PATTERN_YEAR)) {
+                $("span#error").text("verify year");
+                $("span#error").show();
+                return;
+            }
+
+            command.push(`-DownerName=${ownerName}`);
+            command.push(`-Dyear=${year}`);
+        }
+
+        if (selection.startsWith("full")) {
+            let ownerId = $("input#owner_id").val();
+            if (!ownerId.match(PATTERN_ARTIFACT)) {
+                $("span#error").text("verify owner id");
+                $("span#error").show();
+                return;
+            }
+
+            let developerId = $("input#developer_id").val();
+            if (!developerId.match(PATTERN_ARTIFACT)) {
+                $("span#error").text("verify developer id");
+                $("span#error").show();
+                return;
+            }
+
+            command.push(`-DdeveloperId=${developerId}`);
+            command.push(`-DownerId=${ownerId}`);
+        }
+
+        if (selection.endsWith("_mod")) {
+            let module = $("input#module").val();
+            if (!module.match(PATTERN_PACKAGE)) {
+                $("span#error").text("verify module");
+                $("span#error").show();
+                return;
+            }
+
+            command.push(`-Dmodule=${module}`);
+        }
+
+        $("textarea#command").text(command.join("\r"));
+        $(".command").show();
     });
 
     $("button#copy").click(function() {
