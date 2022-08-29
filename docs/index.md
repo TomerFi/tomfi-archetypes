@@ -3,6 +3,9 @@ Quickly spin up an updated [Git][6] and [GitHub][5]-ready [Java][0] project with
 ???- note "Glossary"
     --8<-- "docs/glossary.md"
 
+???- note "Generator"
+    --8<-- "docs/generator.md"
+
 All archetypes are build with [Java 17][0] and [Maven 3.8.4][1].</br>
 All archetypes include a [.editorconfig][2], [.gitattributes][3], and a [.gitignore][4] project files.
 

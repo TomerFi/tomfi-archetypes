@@ -1,6 +1,5 @@
 <!-- editorconfig-checker-disable -->
 <!-- markdownlint-disable -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Tomfi Maven Archetype Generator</title>
