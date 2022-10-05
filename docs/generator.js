@@ -93,9 +93,11 @@ $(document).ready(function() {
             return;
         }
 
+
+        let archetypeArtifact = "java-playground"
         let command = ["mvn archetype:generate -B",
             "-DarchetypeGroupId=info.tomfi.archetypes",
-            "-DarchetypeArtifactId=java-playground",
+            "-DarchetypeArtifactId=%placeholder",
             `-DarchetypeVersion=${currentVersion}`,
             `-DgroupId=${groupId}`,
             `-DartifactId=${artifactId}`,
@@ -105,6 +107,9 @@ $(document).ready(function() {
         let selection = $("select#project_type").val();
 
         if (selection.startsWith("advanced") || selection.startsWith("full")) {
+            if (selection.startsWith("advanced")) {
+                archetypeArtifact = "java-advanced";
+            }
             let ownerName = $("input#owner_name").val();
             if (!ownerName.match(PATTERN_ARTIFACT)) {
                 $("span#error").text("verify owner name");
@@ -124,6 +129,7 @@ $(document).ready(function() {
         }
 
         if (selection.startsWith("full")) {
+            archetypeArtifact = "java-full";
             let ownerId = $("input#owner_id").val();
             if (!ownerId.match(PATTERN_ARTIFACT)) {
                 $("span#error").text("verify owner id");
@@ -143,6 +149,7 @@ $(document).ready(function() {
         }
 
         if (selection.endsWith("_mod")) {
+            archetypeArtifact = archetypeArtifact + "-mod";
             let module = $("input#module").val();
             if (!module.match(PATTERN_PACKAGE)) {
                 $("span#error").text("verify module");
@@ -153,7 +160,7 @@ $(document).ready(function() {
             command.push(`-Dmodule=${module}`);
         }
 
-        $("textarea#command").text(command.join("\r"));
+        $("textarea#command").text(command.join("\r").replace("%placeholder", archetypeArtifact));
         $(".command").show();
     });
 
