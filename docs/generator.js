@@ -3,7 +3,7 @@ const PATTERN_ARTIFACT = /^.*[a-zA-Z0-9]+.*$/;
 const PATTERN_VERSION = /^(\d+)\.(\d+)\.(\d+)(?:-SNAPSHOT)?$/;
 const PATTERN_YEAR = /^\d{4}$/;
 
-const currentVersion = "1.1.5"
+const currentVersion = "1.1.6"
 
 $(document).ready(function() {
     function showProps(className, isModular) {
