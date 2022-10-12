@@ -6,7 +6,7 @@ Quickly spin up an updated [Git][6] and [GitHub][5]-ready [Java][0] project with
 ???- note "Generator"
     --8<-- "docs/generator.md"
 
-All archetypes are build with [Java 17][0] and [Maven 3.8.4][1].</br>
+All archetypes are build with [Java 19][0] and [Maven 3.8.6][1].</br>
 All archetypes include a [.editorconfig][2], [.gitattributes][3], and a [.gitignore][4] project files.
 
 ## Archetypes
@@ -53,8 +53,8 @@ docs/profiles/complete-profiles.md
 
 --8<-- "docs/build-examples.md"
 
-[0]: https://www.oracle.com/java/technologies/downloads/#JDK17
-[1]: https://maven.apache.org/docs/3.8.4/release-notes.html
+[0]: https://www.oracle.com/java/technologies/downloads/#JDK19
+[1]: https://maven.apache.org/docs/3.8.6/release-notes.html
 [2]: https://editorconfig.org/
 [3]: https://git-scm.com/docs/gitattributes
 [4]: https://git-scm.com/docs/gitignore

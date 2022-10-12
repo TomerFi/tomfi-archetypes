@@ -36,6 +36,6 @@ will compile, perform unit tests, as well as enfroce source validations, package
 the local [Maven][0] repo (*~/.m2/repository*), and eventually deploy them to [Sonatype OSSRH][1] artifact repository
 ([Maven Central][2]) for [archetypes](/#archetypes) of type *Full*.
 
-[0]: https://maven.apache.org/docs/3.8.4/release-notes.html
+[0]: https://maven.apache.org/docs/3.8.6/release-notes.html
 [1]: https://central.sonatype.org/publish/publish-guide/
 [2]: https://search.maven.org/
