@@ -66,10 +66,10 @@ mvn archetype:generate \
 <!-- editorconfig-checker-disable -->
 <!-- Real Links -->
 [0]: https://search.maven.org/search?q=info.tomfi.archetypes
-[1]: https://openjdk.java.net/projects/jdk/17/
+[1]: https://openjdk.java.net/projects/jdk/19/
 [2]: https://github.com/TomerFi/tomfi-archetypes/actions/workflows/stage.yml
-[3]: https://www.oracle.com/java/technologies/downloads/#JDK17
-[4]: https://maven.apache.org/docs/3.8.4/release-notes.html
+[3]: https://www.oracle.com/java/technologies/downloads/#JDK19
+[4]: https://maven.apache.org/docs/3.8.6/release-notes.html
 [5]: https://github.com/
 [6]: https://github.com/TomerFi/tomfi-archetypes/actions/workflows/pages.yml
 [7]: https://archetypes.tomfi.info/
@@ -77,6 +77,6 @@ mvn archetype:generate \
 [9]: https://archetypes.tomfi.info/generator/
 <!-- Badges Links -->
 [artifact-version]: https://badgen.net/maven/v/maven-central/info.tomfi.archetypes/tomfi-archetypes-parent?icon=maven&label=Maven%20Central
-[java-version]: https://badgen.net/badge/Java%20Version/17/5382a1
+[java-version]: https://badgen.net/badge/Java%20Version/19/5382a1
 [status-build]: https://github.com/TomerFi/tomfi-archetypes/actions/workflows/stage.yml/badge.svg
 [status-pages]: https://github.com/TomerFi/tomfi-archetypes/actions/workflows/pages.yml/badge.svg

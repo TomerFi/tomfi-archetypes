@@ -23,7 +23,7 @@
   <properties>
     <main.basedir>${project.basedir}</main.basedir>
     <archetype.version>3.2.1</archetype.version>
-    <maven.compiler.release>17</maven.compiler.release>
+    <maven.compiler.release>19</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- Dependencies -->
     <extra-enforcer-rules.version>1.6.1</extra-enforcer-rules.version>
