@@ -6,7 +6,7 @@
 
   <groupId>info.tomfi.archetypes</groupId>
   <artifactId>java-playground-mod</artifactId>
-  <version>1.1.7</version>
+  <version>1.1.8-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
   <name>Tomfi Archetypes Java Playground Modular</name>
   <description>Java project for playaround, hacking, or just testing some stuff out.
@@ -16,7 +16,7 @@
   <parent>
     <groupId>info.tomfi.archetypes</groupId>
     <artifactId>tomfi-archetypes-parent</artifactId>
-    <version>1.1.7</version>
+    <version>1.1.8-SNAPSHOT</version>
   </parent>
 
   <properties>
