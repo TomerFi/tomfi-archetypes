@@ -1,4 +1,4 @@
-# Contributing to `tomfi-archetypes`</br>[![conventional-commits]][0]
+# Contributing to `tomfi-archetypes`
 
 :clap: First off, thank you for taking the time to contribute. :clap:
 
@@ -20,15 +20,3 @@ docker run --rm -e RUN_LOCAL=true -e IGNORE_GITIGNORED_FILES=true -e IGNORE_GENE
 
 > Deliberately not linting *Java* sources as most of them are filled with templates.
 
-## Commit messages
-
-Commit messages must:
-
-- adhere the [Conventional Commits Specification][0]
-- be signed-off based on the [Developer Certificate of Origin][1]
-
-<!-- Real Links -->
-[0]: https://conventionalcommits.org
-[1]: https://developercertificate.org
-<!-- Badges Links -->
-[conventional-commits]: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg
