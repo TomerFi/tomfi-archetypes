@@ -1,4 +1,4 @@
-# Contributing to `tomfi-archetypes`
+# Contributing to *tomfi-archetypes*
 
 :clap: First off, thank you for taking the time to contribute. :clap:
 
