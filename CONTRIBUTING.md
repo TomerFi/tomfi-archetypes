@@ -31,7 +31,7 @@ Useful commands:
 
 > Using [venv](https://docs.python.org/3/tutorial/venv.html) is highly recommended.
 
-## Project walk through
+## Project walkthrough
 
 Before going over this section, it's recommended get familiar with the following:
 
