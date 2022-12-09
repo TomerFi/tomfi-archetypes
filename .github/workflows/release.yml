@@ -102,7 +102,7 @@ jobs:
       - name: Commit modifications
         run: |
           git add docs/archetypes
-          git add .github/README.md
+          git add ./README.md
           git add mkdocs.yml
           git add docs/generator.js
           git commit -m "docs: updated docs with ${{ steps.bumper.outputs.new_version }} [skip ci]"
