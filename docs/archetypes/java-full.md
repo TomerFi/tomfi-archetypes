@@ -3,7 +3,7 @@
 mvn archetype:generate \
 -DarchetypeGroupId=info.tomfi.archetypes \
 -DarchetypeArtifactId=java-full \
--DarchetypeVersion=1.1.9
+-DarchetypeVersion=1.1.10
 ```
 
 ???- example "archetype properties"
