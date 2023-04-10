@@ -1,7 +1,12 @@
-const PATTERN_PACKAGE = /^[a-z][a-z0-9_]*(\.[a-z0-9_]+)+[0-9a-z_]$/;
+const PATTERN_MODULE = /^[a-z][a-z0-9]*(\.[a-z0-9]+)*$/;
+const PATTERN_PACKAGE = /^(?!.*package)[a-z][a-z0-9]*(\.[a-z0-9]+)*$/;
+const PATTERN_GROUP = /^[a-z][a-z0-9]*(\.[a-z0-9]+)*$/;
 const PATTERN_ARTIFACT = /^.*[a-zA-Z0-9]+.*$/;
 const PATTERN_VERSION = /^(\d+)\.(\d+)\.(\d+)(?:-SNAPSHOT)?$/;
 const PATTERN_YEAR = /^\d{4}$/;
+const PATTERN_OWNER_ID = /^(?!.* ).*[a-zA-Z0-9]+.*$/;
+const PATTERN_OWNER_NAME = /^.*[a-zA-Z0-9]+.*$/;
+const PATTERN_DEVELOPER_ID = /^(?!.* ).*[a-zA-Z0-9]+.*$/;
 
 const currentVersion = "1.1.11"
 
@@ -66,7 +71,7 @@ $(document).ready(function() {
         $("span#error").hide();
 
         let groupId = $("input#group_id").val();
-        if (!groupId.match(PATTERN_PACKAGE)) {
+        if (!groupId.match(PATTERN_GROUP)) {
             $("span#error").text("verify group id");
             $("span#error").show();
             return;
@@ -111,7 +116,7 @@ $(document).ready(function() {
                 archetypeArtifact = "java-advanced";
             }
             let ownerName = $("input#owner_name").val();
-            if (!ownerName.match(PATTERN_ARTIFACT)) {
+            if (!ownerName.match(PATTERN_OWNER_NAME)) {
                 $("span#error").text("verify owner name");
                 $("span#error").show();
                 return;
@@ -131,14 +136,14 @@ $(document).ready(function() {
         if (selection.startsWith("full")) {
             archetypeArtifact = "java-full";
             let ownerId = $("input#owner_id").val();
-            if (!ownerId.match(PATTERN_ARTIFACT)) {
+            if (!ownerId.match(PATTERN_OWNER_ID)) {
                 $("span#error").text("verify owner id");
                 $("span#error").show();
                 return;
             }
 
             let developerId = $("input#developer_id").val();
-            if (!developerId.match(PATTERN_ARTIFACT)) {
+            if (!developerId.match(PATTERN_DEVELOPER_ID)) {
                 $("span#error").text("verify developer id");
                 $("span#error").show();
                 return;
@@ -151,7 +156,7 @@ $(document).ready(function() {
         if (selection.endsWith("_mod")) {
             archetypeArtifact = archetypeArtifact + "-mod";
             let module = $("input#module").val();
-            if (!module.match(PATTERN_PACKAGE)) {
+            if (!module.match(PATTERN_MODULE)) {
                 $("span#error").text("verify module");
                 $("span#error").show();
                 return;
