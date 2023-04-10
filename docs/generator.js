@@ -8,7 +8,7 @@ const PATTERN_OWNER_ID = /^(?!.* ).*[a-zA-Z0-9]+.*$/;
 const PATTERN_OWNER_NAME = /^.*[a-zA-Z0-9]+.*$/;
 const PATTERN_DEVELOPER_ID = /^(?!.* ).*[a-zA-Z0-9]+.*$/;
 
-const currentVersion = "1.1.11"
+const currentVersion = "1.1.12"
 
 $(document).ready(function() {
     function showProps(className, isModular) {
