@@ -129,7 +129,7 @@ $(document).ready(function() {
                 return;
             }
 
-            command.push(`-DownerName=${ownerName}`);
+            command.push(`-DownerName=\"${ownerName}\"`);
             command.push(`-Dyear=${year}`);
         }
 
