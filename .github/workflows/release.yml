@@ -39,7 +39,7 @@ jobs:
 
       - name: Determine next SemVer
         id: bumper
-        uses: tomerfi/version-bumper-action@1.2.2
+        uses: tomerfi/version-bumper-action@2.0.0
         with:
           label: -SNAPSHOT
 
@@ -55,16 +55,16 @@ jobs:
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         run: >
           mvn release:prepare release:perform -B -ff
-          -Dtag=${{ steps.bumper.outputs.new_version }}
-          -DreleaseVersion=${{ steps.bumper.outputs.new_version }}
-          -DdevelopmentVersion=${{ steps.bumper.outputs.next_dev_iteration}}
+          -Dtag=${{ steps.bumper.outputs.next }}
+          -DreleaseVersion=${{ steps.bumper.outputs.next }}
+          -DdevelopmentVersion=${{ steps.bumper.outputs.dev}}
 
       - name: Create a release name
         id: release_name
         uses: actions/github-script@v7
         with:
           script: |
-            var retval = '${{ steps.bumper.outputs.new_version }}'
+            var retval = '${{ steps.bumper.outputs.next }}'
             if ('${{ github.event.inputs.title }}') {
               retval = retval.concat(' - ${{ github.event.inputs.title }}')
             }
@@ -78,7 +78,7 @@ jobs:
           script: |
             const repo_name = context.payload.repository.full_name
             const response = await github.request('POST /repos/' + repo_name + '/releases', {
-              tag_name: '${{ steps.bumper.outputs.new_version }}',
+              tag_name: '${{ steps.bumper.outputs.next }}',
               name: '${{ steps.release_name.outputs.value }}',
               generate_release_notes: true
             })
@@ -88,10 +88,10 @@ jobs:
         # yamllint disable rule:line-length
         # editorconfig-checker-disable
         run: |
-          sed -i 's/DarchetypeVersion=.*/DarchetypeVersion=${{ steps.bumper.outputs.new_version }}/g' docs/archetypes/*.md
-          sed -i 's/DarchetypeVersion=.*/DarchetypeVersion=${{ steps.bumper.outputs.new_version }}/g' ./README.md
+          sed -i 's/DarchetypeVersion=.*/DarchetypeVersion=${{ steps.bumper.outputs.next }}/g' docs/archetypes/*.md
+          sed -i 's/DarchetypeVersion=.*/DarchetypeVersion=${{ steps.bumper.outputs.next }}/g' ./README.md
           sed -i 's/  version: .*/  version: "${{ steps.bumper.outputs.new_version }}"/g' mkdocs.yml
-          sed -i 's/const currentVersion = .*/const currentVersion = "${{ steps.bumper.outputs.new_version }}"/g' docs/generator.js
+          sed -i 's/const currentVersion = .*/const currentVersion = "${{ steps.bumper.outputs.next }}"/g' docs/generator.js
         # yamllint enable rule:line-length
         # editorconfig-checker-enable
 
@@ -101,5 +101,5 @@ jobs:
           git add ./README.md
           git add mkdocs.yml
           git add docs/generator.js
-          git commit -m "docs: updated docs with ${{ steps.bumper.outputs.new_version }} [skip ci]"
+          git commit -m "docs: updated docs with ${{ steps.bumper.outputs.next }} [skip ci]"
           git push origin HEAD
