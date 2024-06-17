@@ -38,7 +38,7 @@
     <maven-help-plugin.version>3.4.1</maven-help-plugin.version>
     <maven-install-plugin.version>3.1.2</maven-install-plugin.version>
     <maven-jar-plugin.version>3.4.1</maven-jar-plugin.version>
-    <maven-release-plugin.version>3.0.1</maven-release-plugin.version>
+    <maven-release-plugin.version>3.1.0</maven-release-plugin.version>
     <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
     <maven-site-plugin.version>4.0.0-M15</maven-site-plugin.version>
     <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
