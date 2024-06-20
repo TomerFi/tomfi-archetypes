@@ -29,7 +29,7 @@
     <extra-enforcer-rules.version>1.8.0</extra-enforcer-rules.version>
     <groovy.version>4.0.21</groovy.version>
     <!-- Plugins (may also be referenced in the submodules archetypes) -->
-    <maven-clean-plugin.version>3.3.2</maven-clean-plugin.version>
+    <maven-clean-plugin.version>3.4.0</maven-clean-plugin.version>
     <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
     <maven-dependency-plugin.version>3.7.0</maven-dependency-plugin.version>
     <maven-deploy-plugin.version>3.1.2</maven-deploy-plugin.version>
