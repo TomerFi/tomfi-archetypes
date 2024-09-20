@@ -26,7 +26,7 @@
     <maven.compiler.release>19</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- Dependencies -->
-    <extra-enforcer-rules.version>1.8.0</extra-enforcer-rules.version>
+    <extra-enforcer-rules.version>1.9.0</extra-enforcer-rules.version>
     <groovy.version>4.0.23</groovy.version>
     <!-- Plugins (may also be referenced in the submodules archetypes) -->
     <maven-clean-plugin.version>3.4.0</maven-clean-plugin.version>
