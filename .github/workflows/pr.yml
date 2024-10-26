@@ -1,60 +1,60 @@
----
-name: Pull request build
-
-on:
-  pull_request:
-    branches:
-      - main
-
-jobs:
-  lint:
-    runs-on: ubuntu-latest
-    name: Lint project
-    permissions:
-      pull-requests: write
-    steps:
-      - name: Checkout sources
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Lint code base
-        uses: docker://ghcr.io/github/super-linter:slim-v4
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_ALL_CODEBASE: false
-          IGNORE_GITIGNORED_FILES: true
-          IGNORE_GENERATED_FILES: true
-          VALIDATE_EDITORCONFIG: true
-          VALIDATE_GITHUB_ACTIONS: true
-          VALIDATE_GROOVY: true
-          VALIDATE_JSON: true
-          VALIDATE_MARKDOWN: true
-          VALIDATE_XML: true
-          VALIDATE_YAML: true
-
-  build:
-    needs: lint
-    runs-on: ubuntu-latest
-    name: Build project
-    strategy:
-      fail-fast: true
-      matrix:
-        java: [17, 19]
-
-    permissions:
-      pull-requests: read
-    steps:
-      - name: Checkout sources
-        uses: actions/checkout@v4
-
-      - name: Setup Java ${{ matrix.java }}
-        uses: actions/setup-java@v4.5.0
-        with:
-          distribution: temurin
-          java-version: ${{ matrix.java }}
-          cache: maven
-
-      - name: Verify the project
-        run: mvn verify -B -ff
+#---
+#name: Pull request build
+#
+#on:
+#  pull_request:
+#    branches:
+#      - main
+#
+#jobs:
+#  lint:
+#    runs-on: ubuntu-latest
+#    name: Lint project
+#    permissions:
+#      pull-requests: write
+#    steps:
+#      - name: Checkout sources
+#        uses: actions/checkout@v4
+#        with:
+#          fetch-depth: 0
+#
+#      - name: Lint code base
+#        uses: docker://ghcr.io/github/super-linter:slim-v4
+#        env:
+#          DEFAULT_BRANCH: main
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          VALIDATE_ALL_CODEBASE: false
+#          IGNORE_GITIGNORED_FILES: true
+#          IGNORE_GENERATED_FILES: true
+#          VALIDATE_EDITORCONFIG: true
+#          VALIDATE_GITHUB_ACTIONS: true
+#          VALIDATE_GROOVY: true
+#          VALIDATE_JSON: true
+#          VALIDATE_MARKDOWN: true
+#          VALIDATE_XML: true
+#          VALIDATE_YAML: true
+#
+#  build:
+#    needs: lint
+#    runs-on: ubuntu-latest
+#    name: Build project
+#    strategy:
+#      fail-fast: true
+#      matrix:
+#        java: [17, 19]
+#
+#    permissions:
+#      pull-requests: read
+#    steps:
+#      - name: Checkout sources
+#        uses: actions/checkout@v4
+#
+#      - name: Setup Java ${{ matrix.java }}
+#        uses: actions/setup-java@v4.5.0
+#        with:
+#          distribution: temurin
+#          java-version: ${{ matrix.java }}
+#          cache: maven
+#
+#      - name: Verify the project
+#        run: mvn verify -B -ff

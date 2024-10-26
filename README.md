@@ -1,3 +1,8 @@
+# TomFi's Maven Archetypes Archived.
+
+<details>
+<summary>Original README</summary>
+
 # TomFi's Maven Archetypes</br>[![artifact-version]][0] [![java-version]][1] [![status-build]][2] [![status-pages]][6]
 
 Quickly spin up an updated [Git][8] and [GitHub][5]-ready [Java][3] project with [Maven][4].</br>
@@ -80,3 +85,5 @@ mvn archetype:generate \
 [java-version]: https://badgen.net/badge/Java%20Version/19/5382a1
 [status-build]: https://github.com/TomerFi/tomfi-archetypes/actions/workflows/stage.yml/badge.svg
 [status-pages]: https://github.com/TomerFi/tomfi-archetypes/actions/workflows/pages.yml/badge.svg
+
+</details>
